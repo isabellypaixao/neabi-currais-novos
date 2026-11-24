@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ações e agenda — Protótipo visual — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · página Ações e agenda · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: idêntico ao da home; "Ações" marcado como página atual -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html">Sobre</a></li>
+          <li><a href="prototipo-acoes.html" aria-current="page">Ações</a></li>
+          <li><a href="prototipo-materiais.html">Materiais</a></li>
+          <li><a href="prototipo-contato.html">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA: título grande à esquerda, texto à direita, faixa de estampa na base.
+         (Composição diferente da home e da Sobre.) -->
+    <section class="acoes-abertura" aria-labelledby="ac-titulo">
+      <div class="container acoes-abertura__grade">
+        <h1 class="acoes-titulo" id="ac-titulo">Ações e agenda</h1>
+        <div class="acoes-abertura__resto">
+          <p class="acoes-abertura__intro"><span class="ph">[INTRODUÇÃO CURTA — o que a pessoa encontra nesta página]</span></p>
+          <p class="acoes-atalhos">
+            <a class="link-texto" href="#proximo">Próximo Grupo de Estudos</a>
+            <a class="link-texto" href="#calendario">Calendário</a>
+            <a class="link-texto" href="#outras">Outras atividades</a>
+            <a class="link-texto" href="#realizadas">Ações realizadas</a>
+          </p>
+        </div>
+      </div>
+      <div class="estampa estampa--vinho acoes-estampa" role="img" aria-label="Faixa reservada para a estampa oficial do NEABI"><span class="estampa__legenda">[ESTAMPA OFICIAL DO NEABI]</span></div>
+    </section>
+
+    <!-- 1. PRÓXIMO GRUPO DE ESTUDOS: destaque curto. Os dados vêm de dados/grupo-estudos.js (js/proximo-grupo-estudos.js).
+         Quem quiser consultar encontros anteriores e textos usa o calendário logo abaixo. -->
+    <section class="secao proximo" id="proximo" aria-labelledby="ac-proximo">
+      <div class="container">
+        <div class="grupo">
+          <div>
+            <h2 class="grupo__rotulo" id="ac-proximo">Próximo Grupo de Estudos</h2>
+            <p class="grupo__data"><span class="grupo__dia" data-proximo-grupo="dia"><span class="ph">[DD]</span></span><span class="grupo__mes" data-proximo-grupo="mes"><span class="ph">[MÊS]</span></span></p>
+          </div>
+          <div>
+            <h3 class="grupo__titulo" data-proximo-grupo="titulo"><span class="ph">[TEMA A SER DEFINIDO]</span></h3>
+            <p class="grupo__detalhe" data-proximo-grupo="detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+            <p class="grupo__linha" data-oculta-sem-valor><span class="grupo__linha-rotulo">Texto: </span><span data-proximo-grupo="texto"><span class="ph">[TEXTO A SER DEFINIDO]</span></span></p>
+            <p class="grupo__linha" data-oculta-sem-valor><span class="grupo__linha-rotulo">Autor(a): </span><span data-proximo-grupo="autor"><span class="ph">[AUTOR(A)]</span></span></p>
+            <a class="link-texto" href="#calendario">Ver o calendário do Grupo de Estudos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDÁRIO DO GRUPO DE ESTUDOS: seção própria, só encontros públicos do Grupo (dados/grupo-estudos.js).
+         O calendário, o painel e as listas são montados por js/calendario-grupo-estudos.js. -->
+    <section class="secao calendario" id="calendario" aria-labelledby="cal-titulo">
+      <div class="container">
+        <h2 class="titulo-secao" id="cal-titulo">Calendário do Grupo de Estudos</h2>
+        <p class="calendario__intro">Consulte aqui os próximos encontros, os anteriores e os textos estudados em cada data. Escolha um dia marcado para ver os detalhes.</p>
+
+        <div class="calendario__grade" id="calendario-grupo">
+          <div>
+            <div class="calendario__topo">
+              <h3 class="calendario__mes" id="calendario-mes" aria-live="polite"></h3>
+              <div class="calendario__navegacao">
+                <button class="calendario__botao" id="calendario-anterior" type="button" aria-label="Mês anterior">‹</button>
+                <button class="calendario__botao" id="calendario-seguinte" type="button" aria-label="Próximo mês">›</button>
+              </div>
+            </div>
+            <table class="calendario__tabela" aria-labelledby="calendario-mes">
+              <thead>
+                <tr>
+                  <th scope="col"><span aria-hidden="true">dom</span><span class="so-leitor">domingo</span></th>
+                  <th scope="col"><span aria-hidden="true">seg</span><span class="so-leitor">segunda-feira</span></th>
+                  <th scope="col"><span aria-hidden="true">ter</span><span class="so-leitor">terça-feira</span></th>
+                  <th scope="col"><span aria-hidden="true">qua</span><span class="so-leitor">quarta-feira</span></th>
+                  <th scope="col"><span aria-hidden="true">qui</span><span class="so-leitor">quinta-feira</span></th>
+                  <th scope="col"><span aria-hidden="true">sex</span><span class="so-leitor">sexta-feira</span></th>
+                  <th scope="col"><span aria-hidden="true">sáb</span><span class="so-leitor">sábado</span></th>
+                </tr>
+              </thead>
+              <tbody id="calendario-corpo"></tbody>
+            </table>
+            <ul class="calendario__legenda" aria-label="Legenda">
+              <li><span class="legenda__marca legenda__marca--proximo" aria-hidden="true"></span>Próximo encontro</li>
+              <li><span class="legenda__marca legenda__marca--realizado" aria-hidden="true"></span>Realizado</li>
+            </ul>
+          </div>
+          <div class="calendario__painel" id="calendario-detalhes" aria-live="polite" aria-label="Detalhes do encontro"></div>
+        </div>
+
+        <!-- Lista simples: no celular evita depender do calendário mensal -->
+        <div class="calendario__listas">
+          <div>
+            <h3 class="calendario__subtitulo">Próximos encontros</h3>
+            <ul class="lista-encontros" id="calendario-proximos"></ul>
+          </div>
+          <div>
+            <h3 class="calendario__subtitulo">Encontros anteriores</h3>
+            <ul class="lista-encontros" id="calendario-anteriores"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUTRAS ATIVIDADES PÚBLICAS: eventos, projetos e campanhas (o Grupo de Estudos fica no calendário).
+         No site funcional esta seção só aparece quando existirem atividades; aqui as 3 amostras mostram a estrutura. -->
+    <section class="secao outras" id="outras" aria-labelledby="ac-outras">
+      <div class="container">
+        <h2 class="titulo-secao" id="ac-outras">Outras atividades públicas</h2>
+        <p class="outras__intro">Eventos, projetos e campanhas públicos do NEABI.</p>
+        <div class="agenda__cabeca">
+          <div class="filtros" role="group" aria-label="Filtrar atividades por categoria">
+            <button class="filtro" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+            <button class="filtro" type="button" data-filtro="evento" aria-pressed="false">Eventos</button>
+            <button class="filtro" type="button" data-filtro="projeto" aria-pressed="false">Projetos</button>
+            <button class="filtro" type="button" data-filtro="campanha" aria-pressed="false">Campanhas</button>
+          </div>
+        </div>
+        <ul class="agenda__lista" id="ac-agenda">
+          <li class="agenda-item" data-categoria="evento">
+            <p class="agenda-item__data"><span class="agenda-item__dia"><span class="ph">[DD]</span></span><span class="agenda-item__mes"><span class="ph">[MÊS]</span></span></p>
+            <div>
+              <p class="agenda-item__categoria">Evento</p>
+              <h3 class="agenda-item__titulo"><span class="ph">[TÍTULO DA ATIVIDADE]</span></h3>
+              <p class="agenda-item__detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+            </div>
+          </li>
+          <li class="agenda-item" data-categoria="projeto">
+            <p class="agenda-item__data"><span class="agenda-item__dia"><span class="ph">[DD]</span></span><span class="agenda-item__mes"><span class="ph">[MÊS]</span></span></p>
+            <div>
+              <p class="agenda-item__categoria">Projeto</p>
+              <h3 class="agenda-item__titulo"><span class="ph">[TÍTULO DA ATIVIDADE]</span></h3>
+              <p class="agenda-item__detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+            </div>
+          </li>
+          <li class="agenda-item" data-categoria="campanha">
+            <p class="agenda-item__data"><span class="agenda-item__dia"><span class="ph">[DD]</span></span><span class="agenda-item__mes"><span class="ph">[MÊS]</span></span></p>
+            <div>
+              <p class="agenda-item__categoria">Campanha</p>
+              <h3 class="agenda-item__titulo"><span class="ph">[TÍTULO DA ATIVIDADE]</span></h3>
+              <p class="agenda-item__detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+            </div>
+          </li>
+        </ul>
+        <p class="agenda__vazio" id="ac-vazio" role="status" hidden><span class="ph">[Nenhuma atividade nesta categoria por enquanto.]</span></p>
+      </div>
+    </section>
+
+    <!-- 4. AÇÕES REALIZADAS — registro do que o NEABI já fez e escolheu divulgar.
+         Fundo preto e fotografia em primeiro plano, para se distinguir das próximas atividades. -->
+    <section class="secao realizadas" id="realizadas" aria-labelledby="ac-realizadas">
+      <div class="container" data-revela>
+        <h2 class="titulo-secao" id="ac-realizadas">Ações realizadas</h2>
+        <p class="realizadas__intro"><span class="ph">[TEXTO CURTO — o que é este registro; ações escolhidas para divulgação]</span></p>
+
+        <!-- Uma ação em destaque (foto grande) -->
+        <article class="acao acao--destaque">
+          <figure><div class="foto">[FOTO DA AÇÃO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+          <div>
+            <p class="acao__categoria"><span class="ph">[CATEGORIA]</span></p>
+            <h3 class="acao__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></h3>
+            <p class="acao__ano"><span class="ph">[ANO]</span></p>
+            <p><span class="ph">[TEXTO CURTO SOBRE A AÇÃO]</span></p>
+          </div>
+        </article>
+
+        <!-- Duas ações menores -->
+        <div class="acoes-duas">
+          <article class="acao">
+            <figure><div class="foto">[FOTO DA AÇÃO]</div></figure>
+            <p class="acao__categoria"><span class="ph">[CATEGORIA]</span></p>
+            <h3 class="acao__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></h3>
+            <p class="acao__ano"><span class="ph">[ANO]</span></p>
+          </article>
+          <article class="acao">
+            <figure><div class="foto">[FOTO DA AÇÃO]</div></figure>
+            <p class="acao__categoria"><span class="ph">[CATEGORIA]</span></p>
+            <h3 class="acao__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></h3>
+            <p class="acao__ano"><span class="ph">[ANO]</span></p>
+          </article>
+        </div>
+
+        <!-- Arquivo: ações mais antigas, só em texto; fica recolhido até a pessoa pedir -->
+        <details class="acoes-mais">
+          <summary>Ver registros anteriores</summary>
+          <ul class="acoes-arquivo">
+          <li><p class="acoes-arquivo__ano"><span class="ph">[ANO]</span></p><p class="acoes-arquivo__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></p><p class="acoes-arquivo__categoria"><span class="ph">[CATEGORIA]</span></p></li>
+          <li><p class="acoes-arquivo__ano"><span class="ph">[ANO]</span></p><p class="acoes-arquivo__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></p><p class="acoes-arquivo__categoria"><span class="ph">[CATEGORIA]</span></p></li>
+          <li><p class="acoes-arquivo__ano"><span class="ph">[ANO]</span></p><p class="acoes-arquivo__titulo"><span class="ph">[TÍTULO DA AÇÃO REALIZADA]</span></p><p class="acoes-arquivo__categoria"><span class="ph">[CATEGORIA]</span></p></li>
+        </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ENCERRAMENTO: só texto e dois links -->
+    <section class="secao encerramento" aria-labelledby="ac-encerramento">
+      <div class="container">
+        <h2 id="ac-encerramento">Continue conhecendo o NEABI</h2>
+        <p class="encerramento__links">
+          <a class="link-texto" href="prototipo-materiais.html">Materiais</a>
+          <a class="link-texto" href="prototipo-sobre.html">Sobre o NEABI</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: idêntico ao da home -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="../../js/utilitarios.js"></script>
+  <script src="../../dados/grupo-estudos.js"></script>
+  <script src="js/prototipo-visual.js"></script>
+  <script src="../../js/calendario-grupo-estudos.js"></script>
+  <script src="../../js/proximo-grupo-estudos.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Materiais e Conheça — NEABI · Currais Novos</title>
+<meta content="NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas do IFRN, Campus Currais Novos." name="description"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/materiais.css" rel="stylesheet"/>
+<link href="css/movimento.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<!-- ===== Cabeçalho e navegação (igual em todas as páginas) ===== -->
+<header class="cabecalho">
+<div class="container cabecalho__linha">
+<a class="marca" href="index.html">
+<img alt="" aria-hidden="true" class="marca__logo" height="40" src="img/logo-neabi-simbolo.png" width="40"/>
+<span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+</a>
+<nav aria-label="Menu principal" class="menu" id="menu-principal">
+<ul>
+<li class="so-celular"><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a aria-current="page" href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="conteudo">
+<!-- Abertura: bloco vinho; a estampa é a faixa da base -->
+<section aria-labelledby="mat-titulo" class="mat-topo">
+<div class="container">
+<p class="abertura__trilha">
+<a href="index.html">Início</a> / Materiais
+          </p>
+<h1 class="mat-topo__titulo" id="mat-titulo">
+<span class="mat-topo__grande">Materiais</span><span class="mat-topo__pequeno">e Conheça</span>
+</h1>
+<div class="mat-topo__resto">
+<p class="mat-topo__intro" data-texto="introducaoMateriais"></p>
+</div>
+</div>
+<div aria-hidden="true" class="estampa mat-topo__estampa"></div>
+</section>
+<!-- Filtro por tipo (também aceita ?tipo=livros vindo da Home). "Conheça" não é filtrado. -->
+<div class="mat-barra">
+<div class="container mat-barra__linha">
+<div aria-label="Filtrar materiais por tipo" class="filtros" role="group"><button aria-pressed="true" class="filtro" data-filtro-material="todos" type="button">
+              Todos
+            </button><button aria-pressed="false" class="filtro" data-filtro-material="livros" type="button">
+              Livros
+            </button><button aria-pressed="false" class="filtro" data-filtro-material="textos" type="button">
+              Textos
+            </button><button aria-pressed="false" class="filtro" data-filtro-material="filmes" type="button">
+              Filmes
+            </button><button aria-pressed="false" class="filtro" data-filtro-material="outros" type="button">
+              Outros
+            </button></div>
+<a class="link-texto" href="#conheca">Personalidades</a>
+</div>
+</div>
+<!-- Destaque do acervo de estudos; não é afetado pelo filtro. Editar em dados/materiais.js (indicacaoDoMes). -->
+<section aria-labelledby="indicacao-titulo" class="secao indicacao">
+<div class="container indicacao__grade" id="indicacao-grade"></div>
+<noscript><div class="container">
+<p>Para ver os materiais, ative o JavaScript do navegador.</p>
+</div></noscript>
+</section>
+<!-- Catálogo. Cada seção tem data-tipo e as listas são montadas por js/materiais.js a partir de dados/materiais.js.
+         O script mostra poucos itens por vez (2 por categoria em "Todos"; 6 + "Ver mais" em cada categoria). -->
+<div id="lista-materiais"><section aria-labelledby="mat-t-livros" class="secao mat-secao mat-secao--creme" data-tipo="livros" id="livros">
+<div class="container">
+<div class="mat-secao__cabeca">
+<h2 class="titulo-secao" id="mat-t-livros">Livros</h2>
+<button class="link-texto mat-secao__todos" data-ir-para="livros" hidden="" type="button">
+                Ver todos: livros
+              </button>
+</div>
+<div class="livros__grade">
+<div class="livro-destaque" data-destaque="" data-destaque-de="livros"></div>
+<ul aria-label="Livros" class="estante" data-materiais="livros"></ul>
+</div>
+</div>
+</section><section aria-labelledby="mat-t-textos" class="secao mat-secao mat-secao--branca" data-tipo="textos" id="textos">
+<div class="container mat-duas">
+<div>
+<div class="mat-secao__cabeca">
+<h2 class="titulo-secao" id="mat-t-textos">Textos e artigos</h2>
+<button class="link-texto mat-secao__todos" data-ir-para="textos" hidden="" type="button">
+                  Ver todos: textos e artigos
+                </button>
+</div>
+<p data-texto="apresentacaoDeCadaCategoria.textos"></p>
+</div>
+<ul class="lista-material" data-materiais="textos"></ul>
+</div>
+</section><section aria-labelledby="mat-t-filmes" class="secao mat-secao mat-secao--escura" data-tipo="filmes" id="filmes">
+<div class="container">
+<div class="mat-secao__cabeca">
+<h2 class="titulo-secao" id="mat-t-filmes">
+                Filmes e documentários
+              </h2>
+<button class="link-texto mat-secao__todos" data-ir-para="filmes" hidden="" type="button">
+                Ver todos: filmes e documentários
+              </button>
+</div>
+<div class="destaque" data-destaque="" data-destaque-de="filmes"></div>
+<ul aria-label="Filmes e documentários" class="cartazes" data-materiais="filmes"></ul>
+</div>
+</section><section aria-labelledby="mat-t-outros" class="secao mat-secao mat-secao--branca" data-tipo="outros" id="outros">
+<div class="container">
+<div class="mat-secao__cabeca">
+<h2 class="titulo-secao" id="mat-t-outros">Outros materiais</h2>
+<button class="link-texto mat-secao__todos" data-ir-para="outros" hidden="" type="button">
+                Ver todos: outros materiais
+              </button>
+</div>
+<p data-texto="apresentacaoDeCadaCategoria.outros"></p>
+<ul class="lista-material outros__lista" data-materiais="outros"></ul>
+</div>
+</section></div>
+<!-- "Ver mais": aparece só quando uma categoria tem mais itens do que os exibidos -->
+<div class="mat-mais" hidden="" id="mat-mais">
+<div class="container">
+<button class="botao" id="mat-ver-mais" type="button">
+            Ver mais
+          </button>
+<p class="mat-contagem" id="mat-contagem" role="status"></p>
+</div>
+</div>
+<!-- Conheça: personalidades negras e indígenas (dados/personalidades.js, js/personalidades.js).
+         Três em destaque; as demais aparecem em "Ver todas as personalidades". -->
+<section aria-labelledby="mat-t-conheca" class="secao conheca" id="conheca">
+<div class="container">
+<h2 class="titulo-secao" id="mat-t-conheca">
+            Conheça: personalidades negras e indígenas
+          </h2>
+<p class="conheca__intro" data-texto="introducaoConheca"></p>
+<div class="pessoas" id="pessoas-destaques"></div>
+<div class="pessoas pessoas--extras" id="pessoas-extras"></div>
+<button aria-controls="pessoas-extras" aria-expanded="false" class="botao pessoas__todas" id="pessoas-todas" type="button">
+            Ver todas as personalidades
+          </button>
+</div>
+</section>
+</main>
+<!-- ===== Rodapé (igual em todas as páginas) ===== -->
+<footer class="rodape">
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+<div class="container">
+<div class="rodape__marca">
+<img alt="" aria-hidden="true" class="rodape__logo" height="72" src="img/logo-neabi-simbolo.png" width="72"/>
+<p class="rodape__sigla">NEABI</p>
+</div>
+<p>
+          Núcleo de Estudos Afro-Brasileiros e Indígenas<br/>IFRN · Campus
+          Currais Novos
+        </p>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+<!-- Créditos e aviso de autoria do site: dados/instituicao.js (creditosBolsistas). -->
+<p data-texto="creditosBolsistas"></p>
+</div>
+</footer>
+<!-- ===== Scripts: utilitários e dados primeiro; menu e movimento por último ===== -->
+<script src="js/utilitarios.js"></script>
+<script src="dados/instituicao.js"></script>
+<script src="dados/materiais.js"></script>
+<script src="dados/personalidades.js"></script>
+<script src="js/instituicao.js"></script>
+<script src="js/materiais.js"></script>
+<script src="js/personalidades.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/movimento.js"></script>
+</body>
+</html>

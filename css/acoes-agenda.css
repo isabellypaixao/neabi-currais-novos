@@ -1,0 +1,664 @@
+/* =========================================================
+   AÇÕES E AGENDA — acoes-agenda.html (inclui o calendário do Grupo de Estudos)
+   Blocos: abertura · próximo Grupo de Estudos · calendário · outras atividades · ações realizadas · encerramento.
+   ========================================================= */
+
+/* Abertura (Ações = tempo): título moderado; o protagonista da página é a data do próximo encontro */
+.acoes-abertura {
+  background: var(--creme);
+  padding-top: 2rem;
+  overflow: hidden;
+}
+.acoes-titulo {
+  font-size: var(--t1);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+.acoes-abertura__intro {
+  font-size: 1.125rem;
+}
+.acoes-atalhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  margin-bottom: 0;
+}
+.acoes-estampa {
+  height: 40px;
+  margin-top: 2rem;
+
+  --grafismo-opacidade: 0.85;
+  --grafismo-repeticao: repeat-x;
+  --grafismo-tamanho: auto 150%;
+}
+@media (min-width: 900px) {
+  .acoes-abertura {
+    padding-top: 3.5rem;
+  }
+  .acoes-abertura__grade {
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    column-gap: 4rem;
+    align-items: end;
+    padding-bottom: 0.5rem;
+  }
+  .acoes-titulo {
+    margin: 0;
+  }
+  .acoes-estampa {
+    height: 56px;
+    margin-top: 3rem;
+  }
+}
+
+/* Próximas atividades (numerada): o que ainda vai acontecer, aberto à comunidade */
+.proximas {
+  background: var(--branco);
+}
+.proximo {
+  background: var(--branco);
+  padding: 2.5rem 0;
+}
+@media (min-width: 900px) {
+  .proximo {
+    padding: 4rem 0;
+  }
+}
+.proximo .grupo {
+  margin-bottom: 0;
+}
+.grupo__linha {
+  margin: 0 0 0.25rem;
+}
+.grupo__linha-rotulo {
+  font-weight: 700;
+}
+.grupo .link-texto {
+  margin-top: 0.75rem;
+}
+.outras {
+  background: var(--branco);
+}
+.outras__intro {
+  margin-bottom: 1rem;
+}
+.calendario__dica {
+  margin: 0;
+  color: rgba(21, 21, 21, 0.8);
+}
+.acoes-mais summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  cursor: pointer;
+  list-style: none;
+}
+.acoes-mais summary::-webkit-details-marker {
+  display: none;
+}
+/* Próximo Grupo de Estudos: bloco vinho com dia e mês grandes (estilo calendário) */
+.grupo {
+  background: var(--vinho);
+  color: var(--creme);
+  --foco: var(--creme);
+  padding: 1.5rem;
+  margin: 0 -1.25rem 3rem;
+}
+.grupo__rotulo {
+  font: 700 0.9375rem var(--fonte-titulos);
+  margin-bottom: 1rem;
+}
+.grupo__data {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.grupo__dia {
+  font: 600 clamp(3.5rem, 16vw, 5.5rem)/1 var(--fonte-serifa);
+  letter-spacing: -0.02em;
+}
+.grupo__mes {
+  font: 700 var(--t3)/1.2 var(--fonte-titulos);
+}
+.grupo__titulo {
+  font: 800 var(--t3)/1.25 var(--fonte-titulos);
+}
+.grupo__detalhe {
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .grupo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 4rem;
+    align-items: center;
+    padding: 3rem;
+    margin: 0 0 4rem;
+  }
+  .grupo__rotulo {
+    grid-column: 1 / -1;
+  }
+  .grupo__data {
+    margin: 0;
+  }
+}
+
+.agenda__cabeca {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.agenda__titulo {
+  font-size: var(--t3);
+  margin: 0;
+}
+.agenda__lista {
+  border-top: 1px solid var(--preto);
+}
+.agenda-item {
+  display: grid;
+  row-gap: 0.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--preto);
+}
+.agenda-item[hidden] {
+  display: none;
+}
+.agenda-item__data {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+} /* dia grande + mês pequeno */
+.agenda-item__dia {
+  font: 800 2rem/1 var(--fonte-titulos);
+}
+.agenda-item__mes {
+  font: 700 1rem var(--fonte-titulos);
+}
+.agenda-item__categoria {
+  font: 700 0.875rem var(--fonte-titulos);
+  color: var(--vinho);
+  margin-bottom: 0.25rem;
+}
+.agenda-item__titulo {
+  font: 800 1.25rem/1.2 var(--fonte-titulos);
+  margin-bottom: 0.25rem;
+}
+.agenda-item__detalhe {
+  margin: 0;
+}
+.agenda__vazio {
+  padding: 1.25rem 0;
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .agenda__cabeca {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .agenda-item {
+    grid-template-columns: 13rem 1fr;
+    column-gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .agenda-item__dia {
+    font-size: 2.5rem;
+  }
+  .agenda-item__titulo {
+    font-size: 1.375rem;
+  }
+}
+
+/* ---------- Calendário do Grupo de Estudos (seção própria, creme entre "próximas" e "realizadas") ---------- */
+.calendario {
+  background: var(--creme);
+}
+.calendario__intro {
+  margin-bottom: 2rem;
+}
+.calendario__grade {
+  display: grid;
+  gap: 2rem;
+}
+.calendario__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.calendario__mes {
+  font: 700 clamp(1.25rem, 3vw, 1.625rem)/1.2 var(--fonte-titulos);
+  margin: 0;
+}
+.calendario__navegacao {
+  display: flex;
+  gap: 0.5rem;
+}
+.calendario__botao {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid var(--vinho);
+  border-radius: 50%;
+  background: none;
+  color: var(--vinho);
+  font: 700 1.5rem/1 var(--fonte-titulos);
+  cursor: pointer;
+}
+.calendario__botao:hover {
+  background: var(--vinho);
+  color: var(--creme);
+}
+.calendario__tabela {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.calendario__tabela th {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.3);
+  font: 600 0.875rem var(--fonte-titulos);
+  color: var(--vinho);
+  text-align: center;
+}
+.calendario__tabela td {
+  padding: 0.125rem 0;
+  text-align: center;
+}
+/* Dia: número simples; dia com encontro vira botão. Próximo = círculo cheio; realizado = anel (a forma diferencia, não só a cor). */
+.dia {
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+  max-width: 44px;
+  aspect-ratio: 1;
+  font: 600 1rem var(--fonte-titulos);
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+button.dia {
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.dia--proximo {
+  background: var(--vinho);
+  border-color: var(--vinho);
+  color: var(--creme);
+}
+.dia--realizado {
+  border-color: var(--vinho);
+  color: var(--vinho);
+}
+button.dia:hover {
+  box-shadow: 0 0 0 3px rgba(201, 144, 43, 0.45);
+}
+.dia[aria-pressed="true"] {
+  box-shadow:
+    0 0 0 2px var(--creme),
+    0 0 0 4px var(--preto);
+}
+.dia[aria-current="date"] {
+  text-decoration: underline;
+  text-decoration-color: var(--ocre);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+} /* hoje */
+.calendario__legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+.calendario__legenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.legenda__marca,
+.encontro__status::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--vinho);
+}
+.legenda__marca--proximo,
+.encontro__status--proximo::before {
+  background: var(--vinho);
+}
+
+/* Painel de detalhes: um único bloco branco; o dia vem grande (Fraunces), como no "Próximo Grupo de Estudos" */
+.calendario__painel {
+  background: var(--branco);
+  border-top: 4px solid var(--vinho);
+  padding: 1.5rem;
+}
+.encontro + .encontro {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(21, 21, 21, 0.2);
+}
+.encontro__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font: 700 0.9375rem var(--fonte-titulos);
+  color: var(--vinho);
+}
+.encontro__status::before {
+  content: "";
+}
+.encontro__data {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.encontro__dia {
+  font: 600 clamp(3rem, 12vw, 4.5rem)/1 var(--fonte-serifa);
+  color: var(--vinho);
+}
+.encontro__mes {
+  font: 700 var(--t3)/1.2 var(--fonte-titulos);
+}
+.encontro__titulo {
+  margin: 0 0 1rem;
+  font: 800 1.125rem/1.3 var(--fonte-titulos);
+}
+.encontro__dados {
+  margin: 0;
+}
+.encontro__dados div {
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(21, 21, 21, 0.15);
+}
+.encontro__dados dt {
+  font: 600 0.9375rem var(--fonte-titulos);
+  color: var(--vinho);
+}
+.encontro__dados dd {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+/* Listas "Próximos" e "Anteriores": cada item abre com <details>, sem sair do lugar */
+.calendario__listas {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+.calendario__subtitulo {
+  margin-bottom: 1rem;
+  font: 800 var(--t3)/1.2 var(--fonte-titulos);
+}
+.lista-encontros {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.3);
+}
+.lista-encontros > li {
+  border-top: 1px solid rgba(21, 21, 21, 0.3);
+}
+.lista-encontros__vazio {
+  padding: 1rem 0;
+}
+.lista-encontro summary {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  min-height: 44px;
+  padding: 0.85rem 0;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.lista-encontro summary::-webkit-details-marker {
+  display: none;
+}
+.lista-encontro summary::after {
+  content: "+";
+  font: 700 1.25rem/1 var(--fonte-titulos);
+  color: var(--vinho);
+}
+.lista-encontro[open] summary::after {
+  content: "\2212";
+}
+.lista-encontro__data {
+  font: 800 1.125rem var(--fonte-titulos);
+  color: var(--vinho);
+}
+.lista-encontro__corpo {
+  padding-bottom: 1rem;
+}
+@media (min-width: 900px) {
+  .calendario__grade {
+    grid-template-columns: 6fr 5fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+  .calendario__listas {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    margin-top: 4.5rem;
+  }
+  .calendario__painel {
+    padding: 2rem;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .encontro {
+    animation: calendario-aparece 0.25s ease-out;
+  }
+  @keyframes calendario-aparece {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Ações realizadas (numerada): registro do que já foi feito — fundo preto, fotografia em primeiro plano */
+.realizadas {
+  background: var(--preto);
+  color: var(--creme);
+  --foco: var(--ocre);
+}
+.realizadas .rotulo {
+  color: var(--ocre);
+}
+.realizadas__intro {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+.acao__categoria {
+  font: 700 0.875rem var(--fonte-titulos);
+  color: var(--ocre);
+  margin: 0.75rem 0 0.25rem;
+}
+.acao__titulo {
+  font: 800 1.25rem/1.2 var(--fonte-titulos);
+  margin-bottom: 0.5rem;
+}
+.acao__ano {
+  font: 700 0.875rem var(--fonte-titulos);
+  margin: 0;
+}
+.acao--destaque {
+  margin-bottom: 2.5rem;
+}
+.acao--destaque .acao__titulo {
+  font-size: var(--t3);
+}
+.acoes-duas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+} /* duas colunas também no celular: registros menores ocupam menos altura */
+.acoes-arquivo {
+  border-top: 1px solid #555;
+}
+.acoes-arquivo li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  column-gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #444;
+}
+.acoes-arquivo__ano {
+  font: 800 1rem var(--fonte-titulos);
+  color: var(--ocre);
+  margin: 0;
+}
+.acoes-arquivo__titulo {
+  margin: 0;
+}
+.acoes-arquivo__categoria {
+  grid-column: 2;
+  font-size: 0.8125rem;
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .acao--destaque {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: 3rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .acao--destaque .foto {
+    aspect-ratio: 4 / 3;
+  }
+  .acao--destaque .acao__categoria {
+    margin-top: 0;
+  }
+  .acoes-duas {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .acoes-arquivo li {
+    grid-template-columns: 6rem 1fr auto;
+    align-items: baseline;
+  }
+  .acoes-arquivo__categoria {
+    grid-column: auto;
+  }
+}
+
+/* Encerramento: só texto e dois links, sem bloco de cor */
+.encerramento {
+  background: var(--creme);
+}
+.encerramento h2 {
+  font-family: var(--fonte-serifa);
+  font-weight: 600;
+  font-size: var(--t2);
+  max-width: 20ch;
+}
+.encerramento__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  font-size: 1.125rem;
+}
+
+/* ---------- Escala no desktop (900px+): textos auxiliares, categorias e estados vazios; o calendário não muda ---------- */
+@media (min-width: 900px) {
+  .acoes-abertura__intro {
+    font-size: 1.25rem;
+  }
+  .grupo__rotulo {
+    font-size: 1.0625rem;
+  }
+  .calendario__intro,
+  .outras__intro,
+  .realizadas__intro {
+    max-width: 46rem;
+    font-size: 1.125rem;
+  }
+  .agenda-item__categoria,
+  .acao__categoria,
+  .acao__ano {
+    font-size: 1rem;
+  }
+  .agenda-item__detalhe {
+    font-size: 1.0625rem;
+  }
+  .agenda__vazio {
+    padding: 2rem 0;
+    font-size: 1.125rem;
+  }
+  .acao__titulo {
+    font-size: 1.5rem;
+  }
+  .acoes-arquivo__categoria {
+    font-size: 0.9375rem;
+  }
+}
+
+
+/* ---------- Ações sem foto cadastrada ---------- */
+.acao--sem-foto > figure {
+  display: none;
+}
+@media (min-width: 900px) {
+  .acao--destaque.acao--sem-foto {
+    display: block;
+    max-width: 48rem;
+  }
+}
+
+/* ---------- Acervo em imagens ---------- */
+.acervo-imagens {
+  background: var(--creme);
+}
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+.galeria__item {
+  margin: 0;
+}
+.galeria__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.galeria__item figcaption {
+  padding-top: 0.55rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+@media (min-width: 760px) {
+  .galeria {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}

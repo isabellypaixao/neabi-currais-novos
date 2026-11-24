@@ -1,0 +1,95 @@
+/* =========================================================
+   MOVIMENTO (prefers-reduced-motion respeitado)
+   Regras de uso:
+     a) Cada página tem UMA entrada principal, no topo (roda uma vez e fica parada).
+        Só três movimentos: a estampa aparece, o título/sigla entra, o restante surge junto.
+     b) Na rolagem, só recebem efeito os blocos marcados com data-revela no HTML
+        (poucos, escolhidos). O resto da página simplesmente está lá.
+     c) Nenhum efeito em itens de lista, números, linhas ou setas.
+   Tudo é opacity/transform (não mexe no layout) e só vale se a pessoa NÃO
+   pediu "reduzir movimento": com prefers-reduced-motion: reduce, nada abaixo
+   é aplicado e o conteúdo já aparece parado.
+   ========================================================= */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --dist: 12px;
+    --estampa-x: -8%;
+  } /* celular: movimentos curtos */
+  @media (min-width: 900px) {
+    :root {
+      --dist: 22px;
+      --estampa-x: 12%;
+    }
+  }
+
+  @keyframes entrada-sobe {
+    from {
+      opacity: 0;
+      transform: translateY(var(--dist));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes entrada-surge {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes entrada-estampa {
+    from {
+      opacity: 0;
+      transform: translateX(var(--estampa-x));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Entrada das páginas: 1) estampa  2) sigla/título  3) resto (juntos, um pouco depois) */
+  .hero__estampa,
+  .abertura__estampa,
+  .acoes-estampa,
+  .mat-topo__estampa {
+    animation: entrada-estampa 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s both;
+  }
+  .hero__sigla,
+  .abertura__titulo,
+  .acoes-titulo,
+  .mat-topo__titulo,
+  .contato__titulo {
+    animation: entrada-sobe 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both;
+  }
+  .hero__corpo,
+  .abertura__resto,
+  .acoes-abertura__resto,
+  .mat-topo__resto {
+    animation: entrada-surge 0.8s ease-out 0.5s both;
+  }
+
+  /* Rolagem: só blocos com data-revela (a classe "revela" é criada pelo JavaScript) */
+  .revela {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .revela.visivel {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media print {
+  .revela {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

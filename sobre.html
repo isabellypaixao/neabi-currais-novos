@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Sobre o NEABI — NEABI · Currais Novos</title>
+<meta content="NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas do IFRN, Campus Currais Novos." name="description"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/sobre.css" rel="stylesheet"/>
+<link href="css/movimento.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<!-- ===== Cabeçalho e navegação (igual em todas as páginas) ===== -->
+<header class="cabecalho">
+<div class="container cabecalho__linha">
+<a class="marca" href="index.html">
+<img alt="" aria-hidden="true" class="marca__logo" height="40" src="img/logo-neabi-simbolo.png" width="40"/>
+<span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+</a>
+<nav aria-label="Menu principal" class="menu" id="menu-principal">
+<ul>
+<li class="so-celular"><a href="index.html">Início</a></li>
+<li><a aria-current="page" href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="conteudo">
+<!-- Abertura: texto institucional + marca oficial do NEABI -->
+<section aria-labelledby="t-sobre" class="abertura">
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+<div class="container abertura__conteudo">
+<p class="abertura__trilha">
+<a href="index.html">Início</a> / Sobre
+          </p>
+<div class="abertura__grade">
+<div>
+<h1 class="abertura__titulo" id="t-sobre">Sobre o NEABI</h1>
+<div class="abertura__resto">
+<p class="abertura__intro" data-texto="introducaoSobre"></p>
+</div>
+</div>
+<figure aria-label="Marca oficial do NEABI-IFRN" class="abertura__marca-oficial">
+<img alt="Marca oficial do NEABI-IFRN — Núcleo de Estudos Afro-Brasileiros e Indígenas" height="504" src="img/logo-neabi-oficial.png" width="420"/>
+</figure>
+</div>
+<nav aria-label="Nesta página" class="abertura__indice">
+<span class="abertura__indice-rotulo">Nesta página</span>
+<a href="#o-que-e">O NEABI</a>
+<a href="#campus">No campus</a>
+<a href="#importancia">Importância</a>
+<a href="#trajetoria">Trajetória</a>
+<a href="#atuacao">O que fazemos</a>
+<a href="#sobre-o-site">Este site</a>
+</nav>
+</div>
+</section>
+<!-- O que é o NEABI? (textos em dados/instituicao.js) -->
+<section aria-labelledby="t-oqe" class="secao oqe" id="o-que-e">
+<div class="container oqe__grade">
+<div>
+<h2 class="titulo-secao" id="t-oqe">O que é o NEABI?</h2>
+<p class="destaque-serifa" data-texto="fraseDeDestaque"></p>
+</div>
+<div class="oqe__texto" data-lista="oQueE"></div>
+</div>
+</section>
+<!-- NEABI no IFRN — Campus Currais Novos -->
+<section aria-labelledby="t-campus" class="secao campus" id="campus">
+<div class="container campus__grade" data-revela="">
+<div>
+<h2 class="titulo-secao" id="t-campus">
+              NEABI no IFRN — Campus Currais Novos
+            </h2>
+<div data-lista="noCampus"></div>
+</div>
+</div>
+</section>
+<!-- Importância do NEABI: síntese construída a partir da atuação documentada do núcleo. -->
+<section aria-labelledby="t-importancia" class="secao importancia" id="importancia">
+<div class="container campus__grade" data-revela="">
+<div>
+<p class="rotulo">Por que esse trabalho importa</p>
+<h2 class="titulo-secao" id="t-importancia">A importância do NEABI no campus</h2>
+<div data-lista="importancia"></div>
+</div>
+</div>
+</section>
+<!-- Trajetória: linha do tempo documentada a partir do relato de experiência. -->
+<section aria-labelledby="t-historia" class="secao historia-sobre" id="trajetoria">
+<div class="container">
+<div class="secao-cabeca">
+<h2 class="titulo-secao" id="t-historia">Trajetória</h2>
+<p class="secao-cabeca__intro" data-texto="introducaoHistoria"></p>
+</div>
+<ol class="linha-tempo" data-marcos="completo"></ol>
+<noscript><p>
+              Para ver a linha do tempo, ative o JavaScript do navegador.
+            </p></noscript>
+</div>
+</section>
+<!-- Transição: faixa reservada para a estampa -->
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+<!-- Atuação: frentes do núcleo (lista em dados/instituicao.js) -->
+<section aria-labelledby="t-atuacao" class="secao atuacao" id="atuacao">
+<div class="container">
+<h2 class="titulo-secao" id="t-atuacao">O que o NEABI faz no campus</h2>
+<ul class="frentes" data-frentes=""></ul>
+</div>
+</section>
+<!-- Sobre este site: autoria e caráter não institucional do projeto -->
+<section aria-labelledby="t-sobre-site" class="secao sobre-site" id="sobre-o-site">
+<div class="container sobre-site__grade">
+<div>
+<p class="rotulo">Projeto do site</p>
+<h2 class="titulo-secao" id="t-sobre-site">Sobre este site</h2>
+</div>
+<div>
+<div class="sobre-site__texto" data-lista="sobreEsteSite"></div>
+<p class="sobre-site__autoria"><strong>Bolsistas responsáveis:</strong> <span data-texto="autoriaSite"></span></p>
+</div>
+</div>
+</section>
+<!-- Chamada final -->
+<section aria-labelledby="t-chamada" class="secao chamada" id="proximo-passo">
+<div class="container" data-revela="">
+<h2 id="t-chamada">Participe das nossas ações</h2>
+<p class="chamada__texto" data-texto="conviteFinal"></p>
+<div class="botoes">
+<a class="botao botao--ocre" href="acoes-agenda.html">Ver ações e agenda</a>
+<a class="botao botao--contorno" href="acoes-agenda.html#proximo">Próximo Grupo de Estudos</a>
+</div>
+</div>
+</section>
+</main>
+<!-- ===== Rodapé (igual em todas as páginas) ===== -->
+<footer class="rodape">
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+<div class="container">
+<div class="rodape__marca">
+<img alt="" aria-hidden="true" class="rodape__logo" height="72" src="img/logo-neabi-simbolo.png" width="72"/>
+<p class="rodape__sigla">NEABI</p>
+</div>
+<p>
+          Núcleo de Estudos Afro-Brasileiros e Indígenas<br/>IFRN · Campus
+          Currais Novos
+        </p>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+<!-- Créditos e aviso de autoria do site: dados/instituicao.js (creditosBolsistas). -->
+<p data-texto="creditosBolsistas"></p>
+</div>
+</footer>
+<!-- ===== Scripts: utilitários e dados primeiro; menu e movimento por último ===== -->
+<script src="js/utilitarios.js"></script>
+<script src="dados/instituicao.js"></script>
+<script src="js/instituicao.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/movimento.js"></script>
+</body>
+</html>

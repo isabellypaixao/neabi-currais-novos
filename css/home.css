@@ -1,0 +1,483 @@
+/* =========================================================
+   HOME — index.html
+   Abertura (hero), próximo Grupo de Estudos, trajetória e um material em destaque.
+   ========================================================= */
+
+/* Abertura: faixa de estampa atravessada pela sigla */
+.hero {
+  position: relative;
+  background: var(--vinho);
+  color: var(--creme);
+  --foco: var(--creme);
+  overflow: hidden;
+  padding: 4.5rem 0 3rem;
+}
+.hero__estampa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+
+  background-size: 240px 72px;
+  background-position: center;
+}
+.hero__conteudo {
+  position: relative;
+}
+.hero__sigla {
+  font-size: var(--t0);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.75rem;
+}
+.hero__local {
+  font: 700 0.875rem var(--fonte-titulos);
+  margin-bottom: 0.5rem;
+}
+.hero__nome {
+  font: 800 clamp(1.4rem, 5vw, 2.25rem)/1.1 var(--fonte-titulos);
+  max-width: 18ch;
+}
+.hero__texto {
+  max-width: 46ch;
+}
+.hero .botoes .botao {
+  justify-content: space-between;
+}
+@media (min-width: 600px) {
+  .hero .botoes .botao {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 900px) {
+  .hero {
+    padding: 3rem 0 4.5rem;
+  }
+  .hero__estampa {
+  left: auto;
+  width: 36%;
+  height: auto;
+  bottom: 0;
+  
+  --grafismo-tamanho: 480px 144px;
+  --grafismo-opacidade: 0.50;
+ 
+}
+  .hero__sigla {
+    margin-bottom: 2.5rem;
+  }
+  .hero__corpo {
+    max-width: 26rem;
+  }
+}
+
+/* Home: seções de prévia mais compactas que as páginas de aprofundamento */
+.secao--compacta {
+  padding: 2.5rem 0;
+}
+@media (min-width: 900px) {
+  .secao--compacta {
+    padding: 4rem 0;
+  }
+}
+
+/* O que está acontecendo */
+.agora {
+  background: var(--creme);
+  padding: 2.5rem 0 2rem;
+}
+.agora__item {
+  padding: 1rem 0;
+}
+.agora__item + .agora__item {
+  border-top: 1px solid var(--preto);
+} /* um único divisor entre os dois itens */
+.agora__tipo {
+  font: 700 0.8125rem var(--fonte-titulos);
+  color: var(--vinho);
+  margin-bottom: 0.25rem;
+}
+.agora__data {
+  font: 800 1.375rem/1.3 var(--fonte-titulos);
+  margin-bottom: 0.25rem;
+}
+.agora__item:first-child {
+  padding: 1.25rem 0;
+}
+.agora__item:first-child .agora__data {
+  font-size: clamp(2.25rem, 9vw, 3.25rem);
+  line-height: 1.15;
+  color: var(--vinho);
+} /* destaque: data do Grupo de Estudos */
+.agora__titulo {
+  font: 800 1.0625rem/1.2 var(--fonte-titulos);
+  margin-bottom: 0.25rem;
+}
+.agora__item:first-child .agora__titulo {
+  font-size: 1.25rem;
+}
+.agora__detalhe {
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .agora {
+    padding: 3.5rem 0 3rem;
+  }
+  .agora__grade {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .agora__item,
+  .agora__item:first-child {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+  .agora__item + .agora__item {
+    padding-left: 1.5rem;
+    border-top: 0;
+    border-left: 1px solid var(--preto);
+  }
+}
+
+/* Sobre (prévia) */
+.apresentacao {
+  background: var(--branco);
+}
+.declaracao {
+  font: italic 400 var(--t2)/1.35 var(--fonte-destaque);
+  max-width: 26ch;
+}
+@media (min-width: 900px) {
+  .apresentacao__grade {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+  }
+}
+
+/* Nossa história (prévia leve: no celular, 2 marcos compactos) */
+.historia {
+  background: var(--preto);
+  color: var(--creme);
+  --foco: var(--ocre);
+}
+.historia .rotulo {
+  color: var(--ocre);
+}
+.marco {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 1rem 0;
+}
+.marco__ano {
+  font: 800 1.75rem/1 var(--fonte-titulos);
+  color: var(--ocre);
+  margin: 0;
+}
+.marco__titulo {
+  font-size: 1.125rem;
+  line-height: 1.25;
+  margin: 0;
+}
+.marco__texto {
+  grid-column: 2;
+  margin: 0.5rem 0 0;
+}
+.marco--extra {
+  display: none;
+}
+.historia__foto {
+  display: none;
+  margin: 1.5rem 0 0.5rem;
+} /* na prévia da Home a foto só aparece no computador */
+@media (min-width: 900px) {
+  .historia__previa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .marcos {
+    border-top: 0;
+    margin: 0;
+  }
+  .marco {
+    display: block;
+    border-top: 1px solid var(--ocre);
+    border-bottom: 0;
+    padding: 1.25rem 0 0;
+  }
+  .marco__ano {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  .marco__titulo {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .marco__texto,
+  .marco--extra {
+    display: block;
+  }
+  .historia__foto {
+    display: block;
+    margin: 0;
+  }
+  .historia__foto .foto {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* O que o NEABI faz: composição editorial das frentes de atuação (sem numeração, setas, filetes nem caixas iguais).
+   Celular: blocos empilhados. 600px+: Eventos e Projetos lado a lado. 900px+: grade de 12 colunas, com o Grupo de
+   Estudos em destaque, Projetos em desnível e Campanhas em faixa. Cada frente continua sendo um link. */
+.areas {
+  display: grid;
+  gap: 2.75rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.areas a {
+  display: block;
+  text-decoration: none;
+}
+.areas__nome {
+  display: block;
+  font: 800 var(--t3)/1.2 var(--fonte-titulos);
+}
+.areas__descricao {
+  display: block;
+  max-width: 34ch;
+  margin-top: 0.5rem;
+}
+.areas a:hover .areas__nome {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+/* Grupo de Estudos: o bloco maior, em serifa vinho */
+.areas__grupo .areas__nome {
+  font: 600 var(--t1)/1.05 var(--fonte-serifa);
+  letter-spacing: -0.01em;
+  color: var(--vinho);
+}
+.areas__grupo .areas__descricao {
+  max-width: 40ch;
+  font-size: 1.1875rem;
+  margin-top: 0.75rem;
+}
+
+/* Campanhas: faixa ocre */
+.areas__campanhas a {
+  padding: 1.5rem 1.25rem;
+  background: var(--ocre);
+}
+.areas__campanhas .areas__descricao {
+  max-width: 46ch;
+}
+
+@media (min-width: 600px) {
+  .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+  .areas__grupo,
+  .areas__campanhas {
+    grid-column: 1 / -1;
+  }
+  .areas__projetos {
+    margin-top: 2.5rem;
+  } /* desnível entre Eventos e Projetos */
+}
+@media (min-width: 900px) {
+  .areas {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+    row-gap: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  .areas__grupo {
+    grid-column: 1 / span 8;
+  } /* colunas 9–12 livres para uma foto futura */
+  .areas__eventos {
+    grid-column: 1 / span 4;
+  }
+  .areas__projetos {
+    grid-column: 6 / span 4;
+    margin-top: 3rem;
+  }
+  .areas__campanhas {
+    grid-column: 1 / -1;
+  }
+  .areas__campanhas a {
+    display: flex;
+    align-items: baseline;
+    gap: 3rem;
+    padding: 1.75rem 2rem;
+  }
+  .areas__campanhas .areas__descricao {
+    margin-top: 0;
+  }
+}
+
+/* Materiais (prévia na Home): bloco vinho com 1 indicação e 1 personalidade em destaque */
+.materiais {
+  background: var(--vinho);
+  color: var(--creme);
+  --foco: var(--creme);
+}
+.destaques-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 24rem;
+  margin: 1.25rem 0;
+}
+.destaque-home {
+  margin: 0;
+}
+.destaque-home .foto {
+  aspect-ratio: 3 / 4;
+}
+.destaque-home figcaption {
+  margin-top: 0.75rem;
+}
+.destaque-home__rotulo {
+  display: block;
+  margin-bottom: 0.25rem;
+  font: 600 0.9375rem var(--fonte-titulos);
+}
+.destaque-home strong {
+  display: block;
+  font: 800 1.0625rem/1.25 var(--fonte-titulos);
+}
+
+/* Apoio (destaque em ocre) */
+.apoio {
+  background: var(--ocre);
+  color: var(--preto);
+  --foco: var(--preto);
+}
+.apoio h2 {
+  font-family: var(--fonte-serifa);
+  font-weight: 600;
+  font-size: var(--t2);
+  max-width: 16ch;
+  margin-bottom: 1.25rem;
+}
+.apoio__aviso {
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Escala no desktop (900px+): mais presença para "O que está acontecendo", "Sobre" e a prévia de Materiais ---------- */
+@media (min-width: 900px) {
+  .hero__local {
+    font-size: 1rem;
+  }
+  .agora {
+    padding: 4.5rem 0 3.5rem;
+  }
+  .agora__tipo {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .agora__titulo {
+    font-size: 1.5rem;
+  }
+  .agora__item:first-child .agora__titulo {
+    font-size: 1.75rem;
+  }
+  .agora__detalhe {
+    font-size: 1.125rem;
+  }
+  .agora__item,
+  .agora__item:first-child {
+    padding: 2rem 2.5rem 2rem 0;
+  }
+  .agora__item + .agora__item {
+    padding-left: 2.5rem;
+  }
+  .agora .link-texto {
+    margin-top: 0.5rem;
+  }
+  .declaracao {
+    max-width: 34ch;
+  }
+  .destaques-home {
+    max-width: 36rem;
+    gap: 2rem;
+  }
+  .destaque-home__rotulo {
+    font-size: 1rem;
+  }
+  .destaque-home strong {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* Destaques textuais quando não há imagem licenciada cadastrada */
+.destaque-home--sem-foto {
+  min-height: 0;
+}
+.destaque-home--sem-foto figcaption {
+  padding-top: 0.75rem;
+  border-top: 2px solid currentColor;
+}
+
+
+/* ---------- Home reorganizada: hierarquia enxuta ---------- */
+.agora__cabecalho {
+  font: 600 var(--t2)/1.15 var(--fonte-serifa);
+  margin: 0.35rem 0 1.25rem;
+}
+.agora__item--unico {
+  max-width: 50rem;
+  border-top: 1px solid rgba(21, 21, 21, 0.25);
+  border-bottom: 1px solid rgba(21, 21, 21, 0.25);
+}
+.destaques-home {
+  grid-template-columns: 1fr;
+  max-width: 24rem;
+}
+@media (min-width: 900px) {
+  .agora__grade { grid-template-columns: 1fr; }
+  .agora__item--unico { padding: 1.75rem 0; }
+  .destaques-home { max-width: 28rem; }
+}
+
+.agora__item--unico .agora__data {
+  font-size: clamp(2.25rem, 9vw, 3.25rem);
+  line-height: 1.15;
+  color: var(--vinho);
+}
+.agora__item--unico .agora__titulo {
+  font-size: 1.25rem;
+}
+@media (min-width: 900px) {
+  .agora__item--unico .agora__titulo { font-size: 1.75rem; }
+}
+
+
+/* ---------- Home reorganizada: hierarquia enxuta ---------- */
+.agora__cabecalho {
+  font: 600 var(--t2)/1.15 var(--fonte-serifa);
+  margin: 0.35rem 0 1.25rem;
+}
+.agora__item--unico {
+  max-width: 50rem;
+  border-top: 1px solid rgba(21, 21, 21, 0.25);
+  border-bottom: 1px solid rgba(21, 21, 21, 0.25);
+}
+.destaques-home {
+  grid-template-columns: 1fr;
+  max-width: 24rem;
+}
+@media (min-width: 900px) {
+  .agora__grade { grid-template-columns: 1fr; }
+  .agora__item--unico { padding: 1.75rem 0; }
+  .destaques-home { max-width: 28rem; }
+}

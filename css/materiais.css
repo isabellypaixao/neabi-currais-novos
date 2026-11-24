@@ -1,0 +1,499 @@
+/* =========================================================
+   MATERIAIS E CONHEÇA — materiais.html
+   Indicação do mês, filtros, listas por categoria, "Ver mais" e personalidades.
+   ========================================================= */
+
+/* Abertura: vinho; título grande em creme; estampa em faixa na base */
+.mat-topo {
+  background: var(--vinho);
+  color: var(--creme);
+  --foco: var(--creme);
+  padding-top: 2rem;
+  overflow: hidden;
+}
+.mat-topo__titulo {
+  font-size: var(--t1);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+.mat-topo__grande {
+  display: block;
+}
+.mat-topo__pequeno {
+  display: block;
+  margin-top: 0.25rem;
+  font: 400 var(--t2)/1.2 var(--fonte-destaque);
+  font-style: italic;
+  color: var(--ocre);
+} /* ocre só em texto grande */ /* ocre só em texto grande */
+.mat-topo__intro {
+  max-width: 34rem;
+  font-size: 1.125rem;
+}
+.mat-topo__estampa {
+  height: 40px;
+  margin-top: 2rem;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+}
+@media (min-width: 900px) {
+  .mat-topo {
+    padding-top: 3.5rem;
+  }
+  .mat-topo__estampa {
+    height: 56px;
+    margin-top: 3rem;
+  }
+}
+
+/* Barra de filtros (usa o mesmo estilo .filtro da agenda) */
+.mat-barra {
+  background: var(--creme);
+  border-bottom: 1px solid var(--preto);
+  padding: 0.5rem 0;
+}
+.mat-barra__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 1.5rem;
+}
+.mat-secao[hidden],
+.mat-secao [hidden] {
+  display: none !important;
+} /* o filtro e o "Ver mais" usam o atributo hidden */
+.mat-secao__cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.mat-secao__cabeca .titulo-secao {
+  margin: 0;
+}
+/* "Ver todos: livros" é um <button> com aparência de link (como os demais links de aprofundamento) */
+.mat-secao__todos {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: 700 1rem var(--fonte-titulos);
+  text-decoration: underline;
+  text-decoration-color: var(--ocre);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  cursor: pointer;
+}
+.mat-mais {
+  background: var(--branco);
+  padding: 0 0 3rem;
+  text-align: left;
+}
+.mat-mais .botao {
+  color: var(--vinho);
+  background: none;
+  cursor: pointer;
+  font: 700 1rem var(--fonte-titulos);
+}
+.mat-mais .botao:hover {
+  background: var(--vinho);
+  color: var(--creme);
+}
+.mat-contagem {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+}
+.mat-mais[hidden] {
+  display: none;
+}
+
+/* Materiais: cada item é uma linha editorial (tipo, título, autoria, descrição, fonte) */
+.mat-secao--branca {
+  background: var(--branco);
+}
+.mat-secao--creme {
+  background: var(--creme);
+}
+.mat-secao--escura {
+  background: var(--preto);
+  color: var(--creme);
+  --foco: var(--ocre);
+  --linha: #555;
+}
+.lista-material {
+  border-top: 1px solid var(--linha, var(--preto));
+}
+.material {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--linha, var(--preto));
+}
+.material__tipo {
+  font: 700 0.75rem var(--fonte-titulos);
+  color: var(--vinho);
+  margin-bottom: 0.25rem;
+}
+.mat-secao--escura .material__tipo {
+  color: var(--ocre);
+}
+.material__titulo {
+  font: 800 1.25rem/1.25 var(--fonte-titulos);
+  margin-bottom: 0.25rem;
+}
+.material__autor {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.material__descricao {
+  margin-bottom: 0.5rem;
+}
+.material__fonte {
+  margin: 0;
+  font-size: 0.875rem;
+}
+.material--texto .material__titulo {
+  font: 400 var(--t3)/1.3 var(--fonte-destaque);
+} /* textos e artigos: serifa, como em revista */
+.material--destaque {
+  padding: 1.25rem 0 0;
+  border: 0;
+}
+.material--destaque .material__titulo {
+  font-size: var(--t3);
+}
+.mat-duas > div {
+  margin-bottom: 1.5rem;
+}
+.livro-destaque {
+  margin-bottom: 2rem;
+}
+.foto--capa {
+  aspect-ratio: 2 / 3;
+  max-width: 16rem;
+}
+
+/* Indicação do mês: abre a página como a "capa" de uma revista (fora do filtro) */
+.indicacao {
+  background: var(--branco);
+}
+.indicacao__grade {
+  display: grid;
+  gap: 1.75rem;
+}
+.indicacao__nome {
+  font: italic 400 var(--t3)/1.3 var(--fonte-destaque);
+  color: var(--vinho);
+  margin-bottom: 1rem;
+}
+.indicacao .material__titulo {
+  font-size: var(--t2);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 900px) {
+  .indicacao__grade {
+    grid-template-columns: 4fr 6fr;
+    column-gap: 5rem;
+    align-items: center;
+  }
+  .indicacao .foto--capa {
+    max-width: 20rem;
+  }
+}
+
+/* Estante: capas de alturas diferentes apoiadas numa prateleira (livros) */
+.estante {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 1.5rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.estante li {
+  padding: 0 0.375rem 0.75rem;
+  border-bottom: 6px solid var(--preto);
+} /* cada capa apoiada na sua prateleira */
+.estante li:nth-child(3n + 2) .foto {
+  aspect-ratio: 2 / 3.4;
+}
+.estante li:nth-child(3n) .foto {
+  aspect-ratio: 2 / 2.8;
+}
+.estante .foto {
+  aspect-ratio: 2 / 3.1;
+  padding: 0.25rem;
+  font-size: 0.8125rem;
+}
+.estante .material__titulo {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+.estante .material__autor {
+  font-size: 0.875rem;
+  margin: 0;
+}
+/* Cartazes: filmes e documentários */
+.cartazes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.cartazes .foto {
+  aspect-ratio: 2 / 3;
+  padding: 0.25rem;
+  font-size: 0.8125rem;
+}
+.cartazes .material__titulo {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+.cartazes .material__autor {
+  font-size: 0.875rem;
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .estante {
+    grid-template-columns: repeat(4, minmax(0, 11rem));
+  }
+  .cartazes {
+    gap: 2rem;
+  }
+} /* capas com largura máxima: não esticam quando a estante ocupa a linha toda */
+.destaque {
+  margin-bottom: 2.5rem;
+}
+.destaque .material {
+  padding-top: 1rem;
+}
+.outros__lista .material__descricao {
+  display: none;
+} /* lista compacta: só tipo, título, autoria e fonte */
+@media (min-width: 900px) {
+  .mat-duas {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+  .mat-duas > div {
+    margin-bottom: 0;
+  }
+  .livros__grade {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+  .livro-destaque {
+    margin-bottom: 0;
+  }
+  .destaque {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: 3rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .destaque .foto {
+    aspect-ratio: 4 / 3;
+  }
+  .outros__lista {
+    column-count: 2;
+    column-gap: 3rem;
+  }
+  .outros__lista .material {
+    break-inside: avoid;
+  }
+}
+
+/* Conheça: fundo vinho; no celular cada pessoa é uma linha (miniatura + texto); no computador, 3 colunas */
+.conheca {
+  background: var(--vinho);
+  color: var(--creme);
+  --foco: var(--creme);
+}
+.conheca__intro {
+  margin-bottom: 2rem;
+}
+.pessoa {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  column-gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(247, 242, 232, 0.4);
+}
+.pessoa__nome {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+.pessoa__area {
+  font: 600 0.9375rem var(--fonte-titulos);
+  margin-bottom: 0.5rem;
+}
+.pessoa__descricao {
+  margin-bottom: 0.25rem;
+}
+.pessoa__botao {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+html:not(.js) .pessoa__botao {
+  display: none;
+} /* sem JavaScript o texto completo já aparece */
+.pessoa__texto {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+}
+.pessoa__texto[hidden],
+.pessoas[hidden] {
+  display: none;
+}
+.pessoas--extras .pessoa:first-child {
+  border-top: 0;
+}
+.pessoas__todas {
+  margin-top: 2rem;
+  background: none;
+  color: var(--creme);
+  cursor: pointer;
+  font: 700 1rem var(--fonte-titulos);
+}
+.pessoas__todas:hover {
+  background: var(--creme);
+  color: var(--vinho);
+}
+html:not(.js) .pessoas__todas {
+  display: none;
+}
+.pessoa__fonte {
+  font-size: 0.875rem;
+  margin: 0;
+}
+@media (min-width: 900px) {
+  .pessoas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem;
+    align-items: start;
+  }
+  .pessoa {
+    display: block;
+    padding: 0;
+    border-top: 0;
+  }
+  .pessoa__foto {
+    margin-bottom: 1rem;
+  }
+  .pessoas--extras {
+    margin-top: 3rem;
+  }
+  .pessoas--extras .pessoa:first-child {
+    border-top: 0;
+  }
+}
+
+/* Botão "Ver todas as personalidades": o atributo hidden precisa vencer o display do .botao */
+.pessoas__todas[hidden] {
+  display: none;
+}
+/* Categoria sem nenhum item cadastrado */
+.mat-vazio {
+  margin: 1rem 0 0;
+}
+
+/* ---------- Escala no desktop (900px+): ajustes pontuais; esta página mantém o texto corrido de 17px ---------- */
+:root {
+  --texto: 1.0625rem;
+}
+@media (min-width: 900px) {
+  .indicacao__grade {
+    column-gap: 4rem;
+  }
+  .indicacao .foto--capa {
+    max-width: 22rem;
+  }
+  .indicacao .material__autor {
+    font-size: 1.125rem;
+  }
+  .indicacao .material__descricao {
+    max-width: 36rem;
+    font-size: 1.125rem;
+  }
+  .material__tipo {
+    font-size: 0.9375rem;
+  }
+  .material__fonte,
+  .pessoa__fonte {
+    font-size: 0.9375rem;
+  }
+  .estante .material__titulo,
+  .cartazes .material__titulo {
+    font-size: 1.0625rem;
+  }
+  .estante .material__autor,
+  .cartazes .material__autor,
+  .pessoa__area,
+  .mat-contagem {
+    font-size: 1rem;
+  }
+  .pessoa__nome {
+    font-size: 1.375rem;
+  }
+  /* Em "Todos" o destaque de livros fica oculto: a estante usa a largura inteira em vez de deixar a coluna da esquerda vazia */
+  .livros__grade:has(.livro-destaque[hidden]) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Conteúdo textual quando não há capa/cartaz autorizado */
+.indicacao__grade--sem-imagem {
+  display: block;
+}
+.indicacao__grade--sem-imagem .material--destaque {
+  max-width: 46rem;
+}
+[data-destaque].sem-imagem {
+  display: block;
+}
+[data-destaque].sem-imagem .material--destaque {
+  max-width: 46rem;
+}
+
+
+/* Contexto editorial: conecta um material às atividades do Grupo de Estudos. */
+.material__etiqueta {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 0.65rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid currentColor;
+  font: 800 0.72rem/1.2 var(--fonte-titulos);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* Contexto editorial: conecta um material às atividades do Grupo de Estudos. */
+.material__etiqueta {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 0.65rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid currentColor;
+  font: 800 0.72rem/1.2 var(--fonte-titulos);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

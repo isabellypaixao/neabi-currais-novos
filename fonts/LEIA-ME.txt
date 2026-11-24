@@ -1,0 +1,13 @@
+FONTES DO PROJETO
+
+Fraunces (semibold 600, normal, subconjunto latino) — usada só nos títulos principais e em alguns destaques.
+  Arquivo:  fraunces-latin-600-normal.woff2
+  Licença:  SIL Open Font License 1.1 (arquivo Fraunces-OFL.txt). Pode ser usada e distribuída no projeto; mantenha o arquivo de licença junto.
+  Autoria:  The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+  O subconjunto latino cobre português (acentos, cedilha, til).
+
+Para usar outros pesos ou itálico (ex.: unificar as citações que hoje usam Georgia):
+  1. baixe os arquivos .woff2 "latin" da Fraunces (por exemplo, pelo pacote @fontsource/fraunces);
+  2. coloque nesta pasta;
+  3. declare cada um com @font-face no início de css/prototipo-visual.css.
+Texto corrido, menu, botões e filtros continuam em sans-serif do sistema (Inter/Arial).

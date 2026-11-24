@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Materiais e Conheça — Protótipo visual — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · página Materiais e Conheça · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: idêntico em todas as páginas do protótipo; a página atual leva aria-current -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html">Sobre</a></li>
+          <li><a href="prototipo-acoes.html">Ações</a></li>
+          <li><a href="prototipo-materiais.html" aria-current="page">Materiais</a></li>
+          <li><a href="prototipo-contato.html">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA: bloco vinho; a estampa é a faixa da base -->
+    <section class="mat-topo" aria-labelledby="mat-titulo">
+      <div class="container">
+        <p class="abertura__trilha"><a href="prototipo-visual.html">Início</a> / Materiais</p>
+        <h1 class="mat-topo__titulo" id="mat-titulo"><span class="mat-topo__grande">Materiais</span><span class="mat-topo__pequeno">e Conheça</span></h1>
+        <div class="mat-topo__resto">
+          <p class="mat-topo__intro"><span class="ph">[INTRODUÇÃO CURTA — 2 a 3 linhas, aprovadas pelo NEABI]</span></p>
+        </div>
+      </div>
+      <div class="estampa mat-topo__estampa" role="img" aria-label="Espaço reservado para a estampa oficial do NEABI"><span class="estampa__legenda">[ESTAMPA OFICIAL DO NEABI]</span></div>
+    </section>
+
+    <!-- Filtro simples por tipo (também aceita ?tipo=livros vindo da home). "Conheça" não é filtrado. -->
+    <div class="mat-barra">
+      <div class="container mat-barra__linha">
+        <div class="filtros" role="group" aria-label="Filtrar materiais por tipo">
+          <button class="filtro" type="button" data-filtro-material="todos" aria-pressed="true">Todos</button>
+          <button class="filtro" type="button" data-filtro-material="textos" aria-pressed="false">Textos</button>
+          <button class="filtro" type="button" data-filtro-material="livros" aria-pressed="false">Livros</button>
+          <button class="filtro" type="button" data-filtro-material="filmes" aria-pressed="false">Filmes</button>
+          <button class="filtro" type="button" data-filtro-material="outros" aria-pressed="false">Outros</button>
+        </div>
+        <a class="link-texto" href="#conheca">Personalidades</a>
+      </div>
+    </div>
+
+    <!-- INDICAÇÃO DO MÊS: a "capa" da página; não é afetada pelo filtro. Trocar todo mês. -->
+    <section class="secao indicacao" aria-labelledby="mat-indicacao">
+      <div class="container indicacao__grade">
+        <div class="foto foto--clara foto--capa">[CAPA OU CARTAZ — quando houver e for permitido]</div>
+        <div class="material material--destaque" data-revela>
+          <h2 class="indicacao__nome" id="mat-indicacao">Indicação do mês · <span class="ph">[MÊS/ANO]</span></h2>
+          <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+          <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+          <p class="material__descricao"><span class="ph">[POR QUE O NEABI INDICA — 2 a 3 linhas]</span></p>
+          <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <div id="lista-materiais">
+      <!-- Cada seção tem data-tipo; cada item data-item; destaques data-destaque. O js/prototipo-visual.js (3c)
+           mostra só uma parte de cada vez: em "Todos", 2 itens por categoria; em uma categoria, 6 por vez + "Ver mais". -->
+
+      <!-- TEXTOS E ARTIGOS: só tipografia, sem imagem -->
+      <section class="secao mat-secao mat-secao--branca" id="textos" data-tipo="textos" aria-labelledby="mat-t-textos">
+        <div class="container mat-duas">
+          <div>
+            <div class="mat-secao__cabeca">
+          <h2 class="titulo-secao" id="mat-t-textos">Textos e artigos</h2>
+          <button class="link-texto mat-secao__todos" type="button" data-ir-para="textos" hidden>Ver todos: textos e artigos</button>
+        </div>
+            <p><span class="ph">[APRESENTAÇÃO DA CATEGORIA — 1 linha]</span></p>
+          </div>
+          <ul class="lista-material">
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material material--texto" data-item>
+              <p class="material__tipo">Texto / artigo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LIVROS: destaque com capa + estante -->
+      <section class="secao mat-secao mat-secao--creme" id="livros" data-tipo="livros" aria-labelledby="mat-t-livros">
+        <div class="container">
+          <div class="mat-secao__cabeca">
+          <h2 class="titulo-secao" id="mat-t-livros">Livros</h2>
+          <button class="link-texto mat-secao__todos" type="button" data-ir-para="livros" hidden>Ver todos: livros</button>
+        </div>
+          <div class="livros__grade">
+            <div class="livro-destaque" data-destaque>
+              <div class="foto foto--clara foto--capa">[CAPA DO LIVRO — quando houver e for permitido]</div>
+              <div class="material material--destaque">
+                <p class="material__tipo">Livro em destaque</p>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+                <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+              </div>
+            </div>
+            <ul class="estante" aria-label="Livros">
+              <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            <li data-item><div class="foto foto--clara">[CAPA]</div>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILMES E DOCUMENTÁRIOS: fundo preto, imagem larga + cartazes -->
+      <section class="secao mat-secao mat-secao--escura" id="filmes" data-tipo="filmes" aria-labelledby="mat-t-filmes">
+        <div class="container">
+          <div class="mat-secao__cabeca">
+          <h2 class="titulo-secao" id="mat-t-filmes">Filmes e documentários</h2>
+          <button class="link-texto mat-secao__todos" type="button" data-ir-para="filmes" hidden>Ver todos: filmes e documentários</button>
+        </div>
+          <div class="destaque" data-destaque>
+            <div class="foto">[IMAGEM A SER DEFINIDA]</div>
+            <div class="material material--destaque">
+                <p class="material__tipo">Filme ou documentário em destaque</p>
+                <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+                <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+              </div>
+          </div>
+          <ul class="cartazes" aria-label="Filmes e documentários">
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+            <li data-item><div class="foto">[CARTAZ]</div>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+                <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- OUTROS MATERIAIS: lista compacta -->
+      <section class="secao mat-secao mat-secao--branca" id="outros" data-tipo="outros" aria-labelledby="mat-t-outros">
+        <div class="container">
+          <div class="mat-secao__cabeca">
+          <h2 class="titulo-secao" id="mat-t-outros">Outros materiais</h2>
+          <button class="link-texto mat-secao__todos" type="button" data-ir-para="outros" hidden>Ver todos: outros materiais</button>
+        </div>
+          <p><span class="ph">[CARTILHAS, GUIAS, PODCASTS, SITES… — definir com a coordenação]</span></p>
+          <ul class="lista-material outros__lista">
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+            <li class="material " data-item>
+              <p class="material__tipo">Material educativo</p>
+              <h3 class="material__titulo"><span class="ph">[TÍTULO]</span></h3>
+              <p class="material__autor"><span class="ph">[AUTORIA OU DIREÇÃO]</span></p>
+              <p class="material__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+              <p class="material__fonte">Fonte: <span class="ph">[FONTE]</span> · <span class="ph">[LINK, quando houver]</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- "Ver mais": aparece só quando uma categoria tem mais itens do que os exibidos -->
+    <div class="mat-mais" id="mat-mais" hidden>
+      <div class="container">
+        <button class="botao" id="mat-ver-mais" type="button">Ver mais</button>
+        <p class="mat-contagem" id="mat-contagem" role="status"></p>
+      </div>
+    </div>
+
+    <!-- CONHEÇA: personalidades negras e indígenas. "Conhecer mais" expande o texto na própria página. -->
+    <section class="secao conheca" id="conheca" aria-labelledby="mat-t-conheca">
+      <div class="container">
+        <h2 class="titulo-secao" id="mat-t-conheca">Conheça: personalidades negras e indígenas</h2>
+        <p class="conheca__intro"><span class="ph">[INTRODUÇÃO CURTA — critério de escolha definido pelo NEABI]</span></p>
+        <!-- 3 destaques; as demais ficam em #pessoas-extras até a pessoa pedir "Ver todas as personalidades" -->
+        <div class="pessoas">
+          <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-1">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-1">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+              <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-2">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-2">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+              <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-3">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-3">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+        </div>
+        <div class="pessoas pessoas--extras" id="pessoas-extras">
+          <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-4">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-4">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+              <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-5">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-5">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+              <article class="pessoa">
+              <div class="pessoa__foto"><div class="foto foto--retrato">[FOTO]</div></div>
+              <div class="pessoa__resumo">
+                <h3 class="pessoa__nome"><span class="ph">[NOME]</span></h3>
+                <p class="pessoa__area"><span class="ph">[ÁREA DE ATUAÇÃO]</span></p>
+                <p class="pessoa__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></p>
+                <button class="link-texto pessoa__botao" type="button" aria-expanded="false" aria-controls="mat-pessoa-6">Conhecer mais</button>
+              </div>
+              <div class="pessoa__texto" id="mat-pessoa-6">
+                <p><span class="ph">[TEXTO MAIS COMPLETO — a ser fornecido e revisado]</span></p>
+                <p class="pessoa__fonte">Fonte do texto e crédito da imagem: <span class="ph">[FONTE E CRÉDITO]</span></p>
+              </div>
+            </article>
+        </div>
+        <button class="botao pessoas__todas" id="pessoas-todas" type="button" aria-expanded="false" aria-controls="pessoas-extras">Ver todas as personalidades</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: idêntico em todas as páginas -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="js/prototipo-visual.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* =========================================================
+   COMPONENTES COMPARTILHADOS — rótulos, links, botões, estampa, foto, filtros e abertura interna
+   Usados por mais de uma página. Estilos de uma única página ficam no CSS dessa página.
+   ========================================================= */
+
+/* ---------- Rótulo, título de seção, link e botão ---------- */
+/* Rótulo: texto pequeno em negrito, sem caixa alta e sem numeração automática */
+.rotulo {
+  font: 700 0.9375rem var(--fonte-titulos);
+  margin-bottom: 1rem;
+}
+.titulo-secao {
+  font: 800 var(--t2)/1.15 var(--fonte-titulos);
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+
+/* Link secundário: sublinhado, sem seta */
+.link-texto {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+.link-texto:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Botão. A seta (.botao--seta) é usada só no botão de entrada do hero da Home. Caixa alta só nos botões. */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.6rem 1.25rem;
+  border: 2px solid currentColor;
+  border-radius: 0;
+  font: 700 0.875rem var(--fonte-titulos);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.botao--seta::after {
+  content: "→";
+  font-size: 1.1em;
+}
+.botao--ocre {
+  background: var(--ocre);
+  border-color: var(--ocre);
+  color: var(--preto);
+}
+.botao--preto {
+  background: var(--preto);
+  border-color: var(--preto);
+  color: var(--creme);
+}
+.botao--contorno {
+  color: var(--creme);
+}
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+} /* celular: empilhados, mesma largura */
+@media (min-width: 600px) {
+  .botoes {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Grafismo geométrico da identidade visual ---------- */
+/*
+   Grafismo decorativo próprio do site.
+   O desenho está em img/grafismo-neabi.svg.
+*/
+.estampa {
+  position: relative;
+  display: block;
+  border: 0;
+  overflow: hidden;
+
+  background-color: var(--vinho);
+
+  --grafismo-opacidade: 0.75;
+  --grafismo-tamanho: 240px 72px;
+  --grafismo-repeticao: repeat;
+}
+
+.estampa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../img/grafismo-neabi.svg");
+  background-repeat: var(--grafismo-repeticao);
+  background-position: center;
+  background-size: var(--grafismo-tamanho);
+
+  opacity: var(--grafismo-opacidade);
+  pointer-events: none;
+}
+.estampa--vinho {
+  background-color: var(--vinho);
+}
+
+/* Faixa fina entre seções */
+.estampa--faixa {
+  height: 40px;
+  background-color: var(--preto);
+
+  --grafismo-opacidade: 0.78;
+  --grafismo-repeticao: repeat-x;
+  --grafismo-tamanho: auto 100%;
+}
+
+/* Detalhes menores */
+.estampa--detalhe {
+  height: 24px;
+  background-color: var(--vinho);
+
+  --grafismo-opacidade: 0.65;
+  --grafismo-repeticao: repeat-x;
+  --grafismo-tamanho: auto 100%;
+}
+
+/* Esconde as antigas legendas de placeholder */
+.estampa__legenda {
+  display: none;
+}
+
+/* ---------- Foto ---------- */
+/* Foto: função informativa/documental. Quando chegar a imagem real, troque o texto do placeholder por:
+     <div class="foto"><img src="img/arquivo.jpg" alt="Descrição objetiva do que a foto mostra" width="1600" height="900" loading="lazy"></div>
+   e coloque a legenda com crédito em <figcaption> (ex.: "Roda de conversa, 2019. Acervo do NEABI.").
+   O contêiner mantém a proporção e a imagem é cortada (object-fit) sem deformar. */
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.foto:has(img) {
+  padding: 0;
+}
+/* Foto (placeholder) */
+.foto {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  aspect-ratio: 16 / 9;
+  padding: 1rem;
+  background: #262626;
+  border: 1px dashed var(--ocre);
+  color: var(--creme);
+  font-size: 0.875rem;
+}
+.foto--clara {
+  background: var(--branco);
+  color: var(--preto);
+  border-color: var(--vinho);
+}
+.foto--retrato {
+  aspect-ratio: 3 / 4;
+  padding: 0.25rem;
+  background: var(--creme);
+  color: var(--preto);
+}
+
+/* ---------- Filtros por categoria (Ações e Materiais) ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+}
+.filtro {
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  font: 700 1rem var(--fonte-titulos);
+  color: var(--preto);
+  cursor: pointer;
+}
+.filtro:hover {
+  border-bottom-color: var(--ocre);
+}
+.filtro[aria-pressed="true"] {
+  border-bottom-color: var(--vinho);
+  color: var(--vinho);
+}
+
+/* ---------- Abertura de página interna (Sobre e Apoio): título + introdução ---------- */
+/* Abertura (Sobre = memória e arquivo): creme, título moderado, foto documental ao lado do texto.
+   A estampa fica como detalhe fino no topo. */
+.abertura {
+  background: var(--creme);
+  overflow: hidden;
+  padding-bottom: 3rem;
+}
+.abertura__conteudo {
+  padding-top: 2rem;
+}
+.abertura__trilha {
+  font: 600 0.9375rem var(--fonte-titulos);
+  margin-bottom: 1.5rem;
+}
+.abertura__trilha a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.abertura__titulo {
+  font-size: var(--t1);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+}
+.abertura__intro {
+  font-size: 1.125rem;
+}
+.abertura__foto {
+  margin-top: 2rem;
+}
+.abertura__foto .foto {
+  aspect-ratio: 4 / 3;
+}
+.abertura__indice {
+  display: none;
+}
+@media (min-width: 900px) {
+  .abertura {
+    padding-bottom: 4.5rem;
+  }
+  .abertura__conteudo {
+    padding-top: 3.5rem;
+  }
+  .abertura__grade {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: 4rem;
+    align-items: end;
+  }
+  .abertura__foto {
+    margin-top: 0;
+  }
+  /* Índice interno: linha própria abaixo da abertura, com largura total; os itens quebram de forma natural */
+  .abertura__indice {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 2rem;
+    margin-top: 2.5rem;
+    font: 600 1rem var(--fonte-titulos);
+  }
+  .abertura__indice-rotulo {
+    color: var(--vinho);
+  }
+  .abertura__indice a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .abertura__indice a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--vinho);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+  }
+}
+
+/* ---------- Escala no desktop (900px+): rótulos, filtros, links e botões um pouco maiores ---------- */
+@media (min-width: 900px) {
+  .rotulo {
+    font-size: 1.0625rem;
+  }
+  .abertura__trilha {
+    font-size: 1rem;
+  }
+  .abertura__intro {
+    font-size: 1.25rem;
+  }
+  .botao {
+    font-size: 0.9375rem;
+  }
+  .filtros {
+    gap: 0 1.75rem;
+  }
+  .filtro {
+    font-size: 1.0625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .link-texto {
+    font-size: 1.125rem;
+  }
+}

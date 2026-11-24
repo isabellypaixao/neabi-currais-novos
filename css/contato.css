@@ -1,0 +1,149 @@
+/* =========================================================
+   CONTATO — contato.html
+   Apoio é a página mais calma do site. Contato é curto e objetivo. A lista de dados (.dados) é compartilhada pelas duas.
+   ========================================================= */
+
+/* Apoio reaproveita .abertura (Sobre): título menor, só um detalhe fino de estampa */
+.abertura--calma {
+  padding-bottom: 1rem;
+}
+.abertura--calma .abertura__titulo {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.15;
+}
+.abertura--calma .abertura__intro {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+.abertura--calma .abertura__conteudo {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+.aviso-site {
+  max-width: 40rem;
+  margin: 2rem 0 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--vinho);
+  font: 700 1.125rem/1.5 var(--fonte-titulos);
+}
+.ap-secao--branca,
+.ap-secao.ap-secao--branca {
+  background: var(--branco);
+}
+.ap-secao {
+  background: var(--creme);
+}
+.ap-fim {
+  margin: 3rem 0 0;
+  font-size: 1.125rem;
+}
+/* Link dentro da frase fica em linha (sem padding): evita espaçamento irregular entre as linhas do parágrafo */
+/* Apoio: mais espaço entre as etapas (Entenda → Como buscar → Canais) */
+.abertura--calma ~ .secao {
+  padding: 4rem 0;
+}
+@media (min-width: 900px) {
+  .abertura--calma ~ .secao {
+    padding: 6rem 0;
+  }
+}
+
+/* Contato: página curta; título e dados na mesma tela; foto do espaço só quando existir */
+.contato {
+  background: var(--creme);
+}
+.contato__titulo {
+  font-size: var(--t1);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+.contato__campus {
+  font-size: var(--t3);
+  margin-bottom: 2.5rem;
+}
+.contato__foto {
+  margin-top: 2.5rem;
+}
+.contato__foto .foto {
+  aspect-ratio: 4 / 3;
+}
+@media (min-width: 900px) {
+  .contato__grade {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: 5rem;
+    align-items: start;
+  }
+  .contato__foto {
+    margin-top: 0;
+  }
+}
+
+/* Lista de dados (Canais oficiais e Contato): rótulo pequeno + valor grande, separados por linhas */
+.dados {
+  margin: 0;
+}
+.dados__linha {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.25);
+}
+.dados__linha:first-child {
+  padding-top: 0;
+}
+.dados dt {
+  font: 600 0.9375rem var(--fonte-titulos);
+  color: var(--vinho);
+  margin-bottom: 0.25rem;
+}
+.dados dd {
+  margin: 0;
+  font: 700 clamp(1.125rem, 2.4vw, 1.375rem)/1.4 var(--fonte-titulos);
+}
+@media (min-width: 900px) {
+  .ap-duas {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+  .dados__linha {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+    align-items: baseline;
+  }
+  .dados dt {
+    margin: 0;
+  }
+}
+
+/* ---------- Escala no desktop: só legibilidade; estas páginas mantêm o texto corrido de 17px ---------- */
+:root {
+  --texto: 1.0625rem;
+}
+@media (min-width: 900px) {
+  .dados dt {
+    font-size: 1rem;
+  }
+}
+
+
+/* ---------- Organização da página de contato ---------- */
+.contato__bloco {
+  max-width: 56rem;
+  margin-top: 2.5rem;
+}
+.contato__bloco--campus {
+  margin-top: 4rem;
+}
+.contato__subtitulo {
+  margin-bottom: 1rem;
+}
+.contato__explicacao {
+  max-width: 44rem;
+  margin: -0.25rem 0 1.5rem;
+}
+@media (min-width: 900px) {
+  .contato__bloco--campus { margin-top: 5rem; }
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 320 96"
+     width="320"
+     height="96">
+
+  <g
+    fill="none"
+    stroke="#C79B6D"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    opacity="1">
+
+    <!-- Losangos principais -->
+    <path
+      d="
+        M0 48 L40 8 L80 48 L40 88 Z
+        M80 48 L120 8 L160 48 L120 88 Z
+        M160 48 L200 8 L240 48 L200 88 Z
+        M240 48 L280 8 L320 48 L280 88 Z
+      "
+      stroke-width="6"
+    />
+
+    <!-- Losangos internos -->
+    <path
+      d="
+        M20 48 L40 28 L60 48 L40 68 Z
+        M100 48 L120 28 L140 48 L120 68 Z
+        M180 48 L200 28 L220 48 L200 68 Z
+        M260 48 L280 28 L300 48 L280 68 Z
+      "
+      stroke-width="3"
+      opacity=".72"
+    />
+
+    <!-- Encaixes diagonais -->
+    <path
+      d="
+        M0 16 L16 32
+        M0 80 L16 64
+        M64 32 L80 16
+        M64 64 L80 80
+
+        M80 16 L96 32
+        M80 80 L96 64
+        M144 32 L160 16
+        M144 64 L160 80
+
+        M160 16 L176 32
+        M160 80 L176 64
+        M224 32 L240 16
+        M224 64 L240 80
+
+        M240 16 L256 32
+        M240 80 L256 64
+        M304 32 L320 16
+        M304 64 L320 80
+      "
+      stroke-width="4"
+      opacity=".55"
+    />
+
+  </g>
+</svg>

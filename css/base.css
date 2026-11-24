@@ -1,0 +1,174 @@
+/* =========================================================
+   BASE — variáveis, identidade visual, tipografia e acessibilidade geral
+   Carregado em TODAS as páginas, antes dos demais CSS.
+   Para mudar cores, fontes ou tamanhos de título, altere as variáveis de :root.
+   
+   ESCALA TIPOGRÁFICA (use estas variáveis; não crie tamanhos avulsos para títulos)
+     --t0  NEABI da Home (único tamanho "extremo")   --t1  título principal das páginas internas
+     --t2  título de seção                           --t3  chamadas e subtítulos
+     --texto  leitura (17 px), com --medida (largura máxima de parágrafo)
+   FONTES: sans-serif do sistema (Inter/Arial) no texto, menu, botões e filtros. Serifa Fraunces
+   (arquivo local em fonts/) só em contraste: h1, chamadas grandes, dia do encontro e sigla do rodapé.
+   Georgia nos itálicos editoriais (citações, legendas, textos de Materiais).
+   ========================================================= */
+
+/* Fraunces: arquivo dentro do projeto (sem carregamento externo). Só o peso 600 está incluído. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; /* mostra Georgia até a fonte carregar */
+}
+
+/* ---------- Variáveis e identidade visual ---------- */
+:root {
+  /* Tons derivados da marca oficial do NEABI-IFRN recebida pela equipe. */
+  --vinho: #6c3214;       /* marrom profundo */
+  --vinho-claro: #8f553f; /* terracota escuro, com contraste para texto claro */
+  --ocre: #c79b6d;        /* ocre da marca */
+  --preto: #151515;
+  --creme: #f7f0e7;
+  --branco: #ffffff;
+  --fonte-titulos: "Montserrat", Arial, sans-serif;
+  --fonte-serifa:
+    "Fraunces", Georgia, "Times New Roman", serif; /* títulos principais e destaques */
+  --fonte-destaque: Georgia, "Times New Roman", serif;
+  --altura-cabecalho: 60px;
+  --t0: clamp(4rem, 21vw, 11rem);
+  --t1: clamp(2.25rem, 7.5vw, 5rem);
+  --t2: clamp(1.625rem, 4.2vw, 2.75rem);
+  --t3: clamp(1.25rem, 2.6vw, 1.75rem);
+  --texto: 1.0625rem;
+  --medida: 62ch;
+  --largura-container: 1100px;
+}
+/* Escala em notebook/desktop: contêiner um pouco mais largo (1280px+) e texto corrido de 18px (1024px+).
+   Materiais, Apoio e Contato voltam ao texto de 17px nos seus próprios CSS. */
+@media (min-width: 1024px) {
+  :root {
+    --texto: 1.125rem;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --largura-container: 1200px;
+  }
+}
+
+/* ---------- Reset e tipografia ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: calc(var(--altura-cabecalho) + 8px);
+}
+body {
+  margin: 0;
+  font:
+    var(--texto)/1.65 Inter,
+    Arial,
+    sans-serif;
+  color: var(--preto);
+  background: var(--creme);
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0 0 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulos);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+h1 {
+  font-family: var(--fonte-serifa);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+} /* título principal de cada página */
+main p {
+  max-width: var(--medida);
+} /* limita a largura da leitura (classes específicas podem alterar) */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+figure {
+  margin: 0;
+}
+figcaption {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 900px) {
+  figcaption {
+    font-size: 0.9375rem;
+  }
+}
+a {
+  color: inherit;
+}
+
+/* ---------- Acessibilidade: foco visível, link "Pular para o conteúdo", texto só para leitores de tela ---------- */
+:focus-visible {
+  outline: 3px solid var(--foco, var(--vinho));
+  outline-offset: 3px;
+}
+.pular {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  background: var(--preto);
+  color: var(--creme);
+  padding: 0.75rem 1rem;
+}
+.pular:focus {
+  left: 0;
+}
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Estrutura geral: container e seções ---------- */
+.container {
+  width: 100%;
+  max-width: var(--largura-container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.secao {
+  padding: 3.5rem 0;
+}
+@media (min-width: 900px) {
+  .secao {
+    padding: 5.5rem 0;
+  }
+}
+
+/* ---------- Texto provisório (placeholder) ----------
+   Todo texto entre colchetes que ainda depende da coordenação recebe a classe "ph" (fundo amarelo tracejado).
+   Para achá-los: pesquise "[" ou "class=\"ph\"" nos arquivos .html e "[" em dados/*.js.
+   Quando o conteúdo real entrar, o amarelo some sozinho (basta tirar a classe "ph" ou o colchete nos dados). */
+.ph {
+  background: #fff3c4;
+  color: var(--preto);
+  outline: 1px dashed #8a6a00;
+  padding: 0 0.25rem;
+} /* texto provisório */

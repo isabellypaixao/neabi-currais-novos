@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>NEABI · Currais Novos — IFRN</title>
+<meta content="NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas do IFRN, Campus Currais Novos." name="description"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/home.css" rel="stylesheet"/>
+<link href="css/movimento.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<!-- ===== Cabeçalho e navegação (igual em todas as páginas) ===== -->
+<header class="cabecalho">
+<div class="container cabecalho__linha">
+<a class="marca" href="index.html">
+<img alt="" aria-hidden="true" class="marca__logo" height="40" src="img/logo-neabi-simbolo.png" width="40"/>
+<span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+</a>
+<nav aria-label="Menu principal" class="menu" id="menu-principal">
+<ul>
+<li class="so-celular">
+<a aria-current="page" href="index.html">Início</a>
+</li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="conteudo">
+<!-- Hero: a estampa é uma faixa que a sigla atravessa -->
+<section aria-labelledby="t-hero" class="hero">
+<div aria-hidden="true" class="estampa hero__estampa"></div>
+<div class="container hero__conteudo">
+<h1 class="hero__sigla" id="t-hero">NEABI</h1>
+<div class="hero__corpo">
+<p class="hero__local">IFRN · Campus Currais Novos</p>
+<p class="hero__nome">
+              Núcleo de Estudos Afro-Brasileiros e Indígenas
+            </p>
+<p class="hero__texto" data-texto="apresentacaoCurta"></p>
+<div class="botoes">
+<a class="botao botao--ocre botao--seta" href="sobre.html">Conheça o NEABI</a>
+</div>
+</div>
+</div>
+</section>
+<!-- O que está acontecendo: próximo Grupo de Estudos (dados/grupo-estudos.js) e aviso recente (dados/avisos.js) -->
+<section aria-labelledby="t-agora" class="agora">
+<div class="container">
+<p class="rotulo">Agora no NEABI</p>
+<h2 class="agora__cabecalho" id="t-agora">Próximo Grupo de Estudos</h2>
+<article class="agora__item agora__item--unico">
+<p class="agora__data" data-proximo-grupo="data"><span class="ph">[DD/MM]</span></p>
+<p class="agora__titulo" data-proximo-grupo="titulo"><span class="ph">[TÍTULO DO ENCONTRO]</span></p>
+<p class="agora__detalhe" data-proximo-grupo="detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+</article>
+<a class="link-texto" href="acoes-agenda.html#calendario">Ver Grupo de Estudos e calendário</a>
+<noscript><p>Para ver o próximo encontro, ative o JavaScript do navegador.</p></noscript>
+</div>
+</section>
+<!-- Sobre o NEABI (prévia) -->
+<!-- Nossa história (prévia: 1 marco + 1 foto; a linha do tempo completa fica em Sobre) -->
+<section aria-labelledby="t-materiais" class="secao secao--compacta materiais">
+<div class="container">
+<h2 class="rotulo" id="t-materiais">Em destaque</h2>
+<div class="destaques-home" data-previa-materiais=""></div>
+<a class="link-texto" href="materiais.html">Explorar materiais e referências</a>
+</div>
+</section><section aria-labelledby="t-historia" class="secao secao--compacta historia">
+<div class="container">
+<h2 class="rotulo" id="t-historia">Uma trajetória no campus</h2>
+<div class="historia__previa">
+<ol class="marcos" data-marcos="previa"></ol>
+<figure class="historia__foto" data-marco-foto=""></figure>
+</div>
+<a class="link-texto" href="sobre.html#trajetoria">Conheça a trajetória do NEABI</a>
+</div>
+</section>
+<!-- Transição: faixa reservada para a estampa -->
+<div aria-hidden="true" class="estampa estampa--faixa"></div>
+<!-- O que o NEABI faz (lista editorial; os links filtram a agenda por categoria) -->
+<!-- Materiais e Conheça (prévia: indicação do mês + 1 personalidade; dados/materiais.js e dados/personalidades.js) -->
+
+<!-- Apoio (destaque em ocre; sem formulário nem relatos) -->
+</main>
+<!-- ===== Rodapé (igual em todas as páginas) ===== -->
+<footer class="rodape">
+<div aria-hidden="true" class="estampa estampa--faixa"></div>
+<div class="container">
+<div class="rodape__marca">
+<img alt="" aria-hidden="true" class="rodape__logo" height="72" src="img/logo-neabi-simbolo.png" width="72"/>
+<p class="rodape__sigla">NEABI</p>
+</div>
+<p>
+          Núcleo de Estudos Afro-Brasileiros e Indígenas<br/>IFRN · Campus
+          Currais Novos
+        </p>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+<!-- Créditos e aviso de autoria do site: dados/instituicao.js (creditosBolsistas). -->
+<p data-texto="creditosBolsistas"></p>
+</div>
+</footer>
+<!-- ===== Scripts: utilitários e dados primeiro; menu e movimento por último ===== -->
+<script src="js/utilitarios.js"></script>
+<script src="dados/instituicao.js"></script>
+<script src="dados/grupo-estudos.js"></script>
+<script src="dados/materiais.js"></script>
+<script src="js/instituicao.js"></script>
+<script src="js/proximo-grupo-estudos.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/movimento.js"></script>
+</body>
+</html>

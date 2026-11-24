@@ -1,0 +1,442 @@
+/* =========================================================
+   SOBRE — sobre.html
+   O que é o NEABI, No campus, Nossa história (linha do tempo), Objetivos, Atuação e chamada final.
+   A abertura da página (.abertura) está em components.css porque a página Apoio também a usa.
+   ========================================================= */
+
+/* O que é o NEABI? (numerada) */
+.oqe {
+  background: var(--branco);
+}
+.oqe__grade {
+  display: grid;
+  gap: 2rem;
+}
+.destaque-serifa {
+  font: italic 400 var(--t3)/1.4 var(--fonte-destaque);
+}
+.oqe__texto p {
+  max-width: 62ch;
+}
+@media (min-width: 900px) {
+  .oqe__grade {
+    grid-template-columns: 5fr 7fr;
+    gap: 4rem;
+  }
+  .oqe__texto {
+    padding-top: 0.5rem;
+  }
+}
+
+/* No campus (sem numeração) */
+.campus {
+  background: var(--creme);
+}
+.campus__grade {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .campus__grade {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .campus__foto .foto {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Importância do NEABI: bloco de síntese entre apresentação e trajetória */
+.importancia {
+  background: var(--branco);
+}
+.importancia [data-lista="importancia"] {
+  max-width: 54rem;
+}
+.importancia [data-lista="importancia"] p + p {
+  margin-top: 1rem;
+}
+
+/* Nossa história (numerada) — celular: lista compacta que abre/fecha; computador: linha do tempo */
+.historia-sobre {
+  background: var(--preto);
+  color: var(--creme);
+  --foco: var(--ocre);
+}
+.historia-sobre .rotulo {
+  color: var(--ocre);
+}
+.secao-cabeca {
+  margin-bottom: 1.5rem;
+}
+.secao-cabeca__intro {
+  margin: 0;
+}
+.linha-tempo {
+  border-top: 1px solid #555;
+}
+.marco-h {
+  border-bottom: 1px solid #444;
+}
+.marco-h__cabeca {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  column-gap: 1rem;
+  align-items: center;
+  min-height: 64px;
+  padding: 0.5rem 0;
+}
+.marco-h__ano {
+  font: 400 1.625rem/1 var(--fonte-destaque);
+  color: var(--ocre);
+  margin: 0;
+} /* anos em serifa: sensação de arquivo */
+.marco-h__titulo {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin: 0;
+}
+/* Botão do marco (só no celular): texto sublinhado "Ler" / "Fechar" (o + / − fica reservado às listas do calendário) */
+.marco-h__toggle {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  color: var(--creme);
+  font: 700 0.9375rem/1 var(--fonte-titulos);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  cursor: pointer;
+}
+.marco-h__toggle::before {
+  content: "Ler";
+}
+.marco-h__toggle[aria-expanded="true"]::before {
+  content: "Fechar";
+}
+.marco-h__corpo {
+  padding: 0 0 1.25rem 6.5rem;
+}
+.marco-h__texto {
+  margin: 0;
+}
+.marco-h__foto {
+  margin: 1rem 0 0;
+}
+.marco-h__foto .foto {
+  aspect-ratio: 4 / 3;
+}
+.marco-h__foto figcaption {
+  font: italic 400 0.9375rem/1.4 var(--fonte-destaque);
+} /* legenda de arquivo */
+/* Trecho curto de documento: citação em serifa com filete lateral; a fonte vai abaixo */
+.trecho {
+  margin: 1.25rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--ocre);
+  font: italic 400 1.125rem/1.5 var(--fonte-destaque);
+}
+.trecho cite {
+  display: block;
+  margin-top: 0.5rem;
+  font: 400 0.875rem/1.4 var(--fonte-titulos);
+  font-style: normal;
+}
+@media (max-width: 899px) {
+  .marco-h__cabeca {
+    cursor: pointer;
+  }
+  html.js .marco-h:not(.aberto) .marco-h__corpo {
+    display: none;
+  } /* sem JavaScript, tudo fica aberto */
+}
+@media (min-width: 900px) {
+  .secao-cabeca {
+    margin-bottom: 3.5rem;
+  }
+  .linha-tempo {
+    position: relative;
+    border-top: 0;
+  }
+  .linha-tempo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--ocre);
+  }
+  .marco-h {
+    display: grid;
+    grid-template-columns: 1fr 4rem 1fr;
+    grid-template-rows: auto 1fr;
+    border-bottom: 0;
+    padding-bottom: 4.5rem;
+  }
+  .marco-h:last-child {
+    padding-bottom: 0;
+  }
+  .marco-h::before {
+    content: "";
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: start;
+    width: 12px;
+    height: 12px;
+    margin-top: 1.4rem;
+    border-radius: 50%;
+    background: var(--ocre);
+    box-shadow: 0 0 0 6px var(--preto);
+  }
+  .marco-h__cabeca {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+    padding: 0;
+  }
+  .marco-h__toggle {
+    display: none;
+  }
+  .marco-h__corpo {
+    display: contents;
+  }
+  .marco-h__ano {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+  .marco-h__titulo {
+    font-size: var(--t3);
+    margin-bottom: 1rem;
+  }
+  .marco-h__texto {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 30rem;
+  }
+  .marco-h__foto {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    margin: 0;
+    align-self: start;
+  }
+  .marco-h:nth-child(even) .marco-h__cabeca,
+  .marco-h:nth-child(even) .marco-h__texto {
+    grid-column: 3;
+  }
+  .marco-h:nth-child(even) .marco-h__foto {
+    grid-column: 1;
+  }
+}
+
+/* Objetivos: blocos de leitura em serifa, sem numeração nem filetes.
+   Celular: um embaixo do outro, com respiro. 900px+: duas colunas, a segunda em desnível (composição de texto, não lista). */
+.objetivos {
+  background: var(--creme);
+}
+.objetivos__lista {
+  display: grid;
+  gap: 2rem;
+}
+.objetivo__texto {
+  margin: 0;
+  max-width: 34ch;
+  font: 400 clamp(1.1875rem, 2.4vw, 1.5rem)/1.5 var(--fonte-destaque);
+}
+@media (min-width: 900px) {
+  .objetivos__lista {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+    row-gap: 2.5rem;
+  }
+  .objetivo:nth-child(even) {
+    margin-top: 3.5rem;
+  } /* desnível da coluna da direita */
+}
+
+/* Atuação (sem numeração; colunas separadas só por espaço) */
+.atuacao {
+  background: var(--branco);
+}
+.frente {
+  padding: 1rem 0;
+}
+.frente__titulo {
+  font-size: var(--t3);
+  margin-bottom: 0.75rem;
+}
+.frente p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 900px) {
+  .frentes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
+
+/* Chamada final */
+.chamada {
+  background: var(--vinho-claro);
+  color: var(--creme);
+  --foco: var(--creme);
+}
+.chamada h2 {
+  font-family: var(--fonte-serifa);
+  font-weight: 600;
+  font-size: var(--t1);
+  max-width: 18ch;
+  margin-bottom: 1.25rem;
+}
+.chamada__texto {
+  max-width: 40rem;
+}
+.chamada .botoes .botao {
+  justify-content: space-between;
+}
+@media (min-width: 600px) {
+  .chamada .botoes .botao {
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- Escala no desktop (900px+): legendas e trechos de arquivo ---------- */
+@media (min-width: 900px) {
+  .trecho cite {
+    font-size: 0.9375rem;
+  }
+  .marco-h__foto figcaption {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Marca oficial do NEABI-IFRN. O grafismo do site permanece apenas como apoio visual. */
+.marca-oficial {
+  width: min(100%, 320px);
+  margin-top: 2rem;
+}
+.marca-oficial img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--branco);
+}
+.marca-oficial figcaption {
+  color: rgba(21, 21, 21, 0.72);
+  margin-top: 0.6rem;
+}
+@media (min-width: 900px) {
+  .marca-oficial {
+    width: min(100%, 360px);
+    margin-top: 2.5rem;
+  }
+}
+
+/* ---------- Sobre este site: autoria das bolsistas ---------- */
+.sobre-site {
+  background: var(--branco);
+  border-top: 1px solid rgba(21, 21, 21, 0.14);
+}
+.sobre-site__grade {
+  display: grid;
+  gap: 1.5rem;
+}
+.sobre-site__texto {
+  max-width: 46rem;
+}
+.sobre-site__texto p + p {
+  margin-top: 1rem;
+}
+.sobre-site__autoria {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(21, 21, 21, 0.18);
+  max-width: 46rem;
+}
+@media (min-width: 900px) {
+  .sobre-site__grade {
+    grid-template-columns: 4fr 7fr;
+    column-gap: 4rem;
+    align-items: start;
+  }
+}
+
+
+/* ---------- Leitura de texto corrido ----------
+   Parágrafos institucionais mais longos usam alinhamento justificado
+   e recuo de primeira linha, preservando títulos, cards e textos curtos. */
+.oqe__texto p,
+.campus [data-lista="noCampus"] p,
+.importancia [data-lista="importancia"] p,
+.secao-cabeca__intro,
+.marco-h__texto,
+.sobre-site__texto p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-indent: 1.7em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+
+/* ---------- Abertura com a marca oficial; fotografias históricas ficam em Ações ---------- */
+.abertura__marca-oficial {
+  width: min(78vw, 280px);
+  margin: 1.5rem 0 0;
+  justify-self: start;
+}
+.abertura__marca-oficial img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.campus__grade {
+  display: block;
+}
+.campus__grade > div {
+  max-width: 54rem;
+}
+@media (min-width: 900px) {
+  .abertura__marca-oficial {
+    width: min(100%, 300px);
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+  }
+  .campus__grade { display: block; }
+}
+
+
+/* ---------- Abertura com a marca oficial; fotografias históricas ficam em Ações ---------- */
+.abertura__marca-oficial {
+  width: min(78vw, 280px);
+  margin: 1.5rem 0 0;
+  justify-self: start;
+}
+.abertura__marca-oficial img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.campus__grade {
+  display: block;
+}
+.campus__grade > div {
+  max-width: 54rem;
+}
+@media (min-width: 900px) {
+  .abertura__marca-oficial {
+    width: min(100%, 300px);
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+  }
+  .campus__grade { display: block; }
+}

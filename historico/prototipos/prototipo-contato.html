@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contato — Protótipo visual — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · página Contato · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: idêntico em todas as páginas do protótipo; a página atual leva aria-current -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html">Sobre</a></li>
+          <li><a href="prototipo-acoes.html">Ações</a></li>
+          <li><a href="prototipo-materiais.html">Materiais</a></li>
+          <li><a href="prototipo-contato.html" aria-current="page">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- CONTATO: página curta e objetiva. A foto do espaço só entra quando existir. -->
+    <section class="secao contato" aria-labelledby="ct-titulo">
+      <div class="container">
+        <p class="abertura__trilha"><a href="prototipo-visual.html">Início</a> / Contato</p>
+        <h1 class="contato__titulo" id="ct-titulo">Contato</h1>
+        <p class="contato__campus">IFRN — Campus Currais Novos</p>
+        <div class="contato__grade">
+          <dl class="dados">
+          <div class="dados__linha"><dt>Campus</dt><dd><span class="ph">[ENDEREÇO DO CAMPUS]</span></dd></div>
+          <div class="dados__linha"><dt>Onde fica o NEABI</dt><dd><span class="ph">[LOCALIZAÇÃO DENTRO DO CAMPUS]</span></dd></div>
+          <div class="dados__linha"><dt>E-mail</dt><dd><span class="ph">[E-MAIL INSTITUCIONAL]</span></dd></div>
+          <div class="dados__linha"><dt>Redes sociais</dt><dd><span class="ph">[REDES SOCIAIS OFICIAIS]</span></dd></div>
+          <div class="dados__linha"><dt>Horários de atendimento</dt><dd><span class="ph">[ADICIONAR HORÁRIOS]</span></dd></div>
+          <div class="dados__linha"><dt>Outros canais oficiais</dt><dd><span class="ph">[OUTROS CANAIS, se forem informados]</span></dd></div>
+        </dl>
+          <figure class="contato__foto"><div class="foto">[FOTO DO ESPAÇO DO NEABI — quando houver]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+        </div>
+        <p class="ap-fim">Precisa de orientação sobre racismo? Veja a página de <a href="prototipo-apoio.html">Apoio</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: idêntico em todas as páginas -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="js/prototipo-visual.js"></script>
+</body>
+</html>

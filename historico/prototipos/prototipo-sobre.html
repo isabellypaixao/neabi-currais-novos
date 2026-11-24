@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sobre o NEABI — Protótipo visual — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · página Sobre · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: idêntico ao da home; "Sobre" marcado como página atual -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html" aria-current="page">Sobre</a></li>
+          <li><a href="prototipo-acoes.html">Ações</a></li>
+          <li><a href="prototipo-materiais.html">Materiais</a></li>
+          <li><a href="prototipo-contato.html">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA (memória e arquivo): estampa só como detalhe fino; texto + foto documental.
+         Foto real: ver instruções em "Foto" no CSS (img com alt, legenda e crédito). -->
+    <section class="abertura" aria-labelledby="t-sobre">
+      <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[ESTAMPA OFICIAL DO NEABI]</span></div>
+      <div class="container abertura__conteudo">
+        <p class="abertura__trilha"><a href="prototipo-visual.html">Início</a> / Sobre</p>
+        <div class="abertura__grade">
+          <div>
+            <h1 class="abertura__titulo" id="t-sobre">Sobre o NEABI</h1>
+            <div class="abertura__resto">
+              <p class="abertura__intro"><span class="ph">[INTRODUÇÃO CURTA — 2 a 3 linhas, aprovadas pelo NEABI]</span></p>
+            </div>
+          </div>
+          <figure class="abertura__foto"><div class="foto">[FOTO DO ACERVO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+        </div>
+        <nav class="abertura__indice" aria-label="Nesta página">
+          <span class="abertura__indice-rotulo">Nesta página</span>
+          <a href="#o-que-e">O NEABI</a>
+          <a href="#campus">No campus</a>
+          <a href="#nossa-historia">Nossa história</a>
+          <a href="#objetivos">Objetivos</a>
+          <a href="#atuacao">Atuação</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 01. O QUE É O NEABI? — texto corrido, sem card -->
+    <section class="secao oqe" id="o-que-e" aria-labelledby="t-oqe">
+      <div class="container oqe__grade">
+        <div>
+          <h2 class="titulo-secao" id="t-oqe">O que é o NEABI?</h2>
+          <p class="destaque-serifa"><span class="ph">[FRASE DE DESTAQUE RETIRADA DO TEXTO INSTITUCIONAL]</span></p>
+        </div>
+        <div class="oqe__texto">
+          <p><span class="ph">[TEXTO INSTITUCIONAL — PARÁGRAFO 1 — a ser fornecido pela coordenação]</span></p>
+          <p><span class="ph">[TEXTO INSTITUCIONAL — PARÁGRAFO 2]</span></p>
+          <p><span class="ph">[TEXTO INSTITUCIONAL — PARÁGRAFO 3]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. NEABI NO IFRN — CAMPUS CURRAIS NOVOS -->
+    <section class="secao campus" id="campus" aria-labelledby="t-campus">
+      <div class="container campus__grade" data-revela>
+        <div>
+          <h2 class="titulo-secao" id="t-campus">NEABI no IFRN — Campus Currais Novos</h2>
+          <p><span class="ph">[TEXTO SOBRE A ATUAÇÃO LOCAL DO NÚCLEO — PARÁGRAFO 1]</span></p>
+          <p><span class="ph">[TEXTO SOBRE A ATUAÇÃO LOCAL DO NÚCLEO — PARÁGRAFO 2]</span></p>
+        </div>
+        <figure class="campus__foto">
+          <div class="foto foto--clara">[FOTO DO ACERVO]</div>
+          <figcaption>[LEGENDA E CRÉDITO]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 03. NOSSA HISTÓRIA — área principal da página.
+         Desktop: linha do tempo central, marcos alternando texto/foto.
+         Celular: lista compacta; cada marco abre/fecha (ano + título sempre visíveis).
+         Quantidade de marcos: variável. Para adicionar um, copie um <li class="marco-h"> e troque o id do corpo. -->
+    <section class="secao historia-sobre" id="nossa-historia" aria-labelledby="t-historia">
+      <div class="container">
+        <div class="secao-cabeca">
+          <h2 class="titulo-secao" id="t-historia">Nossa história</h2>
+          <p class="secao-cabeca__intro"><span class="ph">[TEXTO DE ABERTURA DA HISTÓRIA — a ser extraído do portfólio]</span></p>
+        </div>
+        <ol class="linha-tempo">
+          <li class="marco-h aberto">
+            <div class="marco-h__cabeca">
+              <p class="marco-h__ano"><span class="ph">[ANO]</span></p>
+              <h3 class="marco-h__titulo"><span class="ph">[MARCO HISTÓRICO]</span></h3>
+              <button class="marco-h__toggle" type="button" aria-expanded="true" aria-controls="marco-1" aria-label="Mostrar ou ocultar detalhes do marco"></button>
+            </div>
+            <div class="marco-h__corpo" id="marco-1">
+              <p class="marco-h__texto"><span class="ph">[TEXTO DO PORTFÓLIO]</span></p>
+              <blockquote class="trecho"><span class="ph">[TRECHO CURTO DE DOCUMENTO — se houver]</span><cite><span class="ph">[NOME DO DOCUMENTO, ANO]</span></cite></blockquote>
+              <figure class="marco-h__foto"><div class="foto">[FOTO DO ACERVO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+            </div>
+          </li>
+          <li class="marco-h">
+            <div class="marco-h__cabeca">
+              <p class="marco-h__ano"><span class="ph">[ANO]</span></p>
+              <h3 class="marco-h__titulo"><span class="ph">[MARCO HISTÓRICO]</span></h3>
+              <button class="marco-h__toggle" type="button" aria-expanded="false" aria-controls="marco-2" aria-label="Mostrar ou ocultar detalhes do marco"></button>
+            </div>
+            <div class="marco-h__corpo" id="marco-2">
+              <p class="marco-h__texto"><span class="ph">[TEXTO DO PORTFÓLIO]</span></p>
+              <figure class="marco-h__foto"><div class="foto">[FOTO DO ACERVO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+            </div>
+          </li>
+          <li class="marco-h">
+            <div class="marco-h__cabeca">
+              <p class="marco-h__ano"><span class="ph">[ANO]</span></p>
+              <h3 class="marco-h__titulo"><span class="ph">[MARCO HISTÓRICO]</span></h3>
+              <button class="marco-h__toggle" type="button" aria-expanded="false" aria-controls="marco-3" aria-label="Mostrar ou ocultar detalhes do marco"></button>
+            </div>
+            <div class="marco-h__corpo" id="marco-3">
+              <p class="marco-h__texto"><span class="ph">[TEXTO DO PORTFÓLIO]</span></p>
+              <figure class="marco-h__foto"><div class="foto">[FOTO DO ACERVO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+            </div>
+          </li>
+          <li class="marco-h">
+            <div class="marco-h__cabeca">
+              <p class="marco-h__ano"><span class="ph">[ANO]</span></p>
+              <h3 class="marco-h__titulo"><span class="ph">[MARCO HISTÓRICO]</span></h3>
+              <button class="marco-h__toggle" type="button" aria-expanded="false" aria-controls="marco-4" aria-label="Mostrar ou ocultar detalhes do marco"></button>
+            </div>
+            <div class="marco-h__corpo" id="marco-4">
+              <p class="marco-h__texto"><span class="ph">[TEXTO DO PORTFÓLIO]</span></p>
+              <figure class="marco-h__foto"><div class="foto">[FOTO DO ACERVO]</div><figcaption>[LEGENDA E CRÉDITO]</figcaption></figure>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Transição: faixa reservada para a estampa (igual à da home) -->
+    <div class="estampa estampa--faixa" role="img" aria-label="Faixa reservada para a estampa oficial"><span class="estampa__legenda">[ESTAMPA — faixa de transição]</span></div>
+
+    <!-- 04. OBJETIVOS — composição tipográfica numerada, sem card.
+         Quantidade variável: copie um <li class="objetivo"> e atualize o número e o --i (escalonamento da animação). -->
+    <section class="secao objetivos" id="objetivos" aria-labelledby="t-objetivos">
+      <div class="container">
+        <h2 class="titulo-secao" id="t-objetivos">Objetivos</h2>
+        <ol class="objetivos__lista">
+          <li class="objetivo"><span class="objetivo__numero" aria-hidden="true">01</span><p class="objetivo__texto"><span class="ph">[OBJETIVO — texto oficial a ser confirmado]</span></p></li>
+          <li class="objetivo"><span class="objetivo__numero" aria-hidden="true">02</span><p class="objetivo__texto"><span class="ph">[OBJETIVO — texto oficial a ser confirmado]</span></p></li>
+          <li class="objetivo"><span class="objetivo__numero" aria-hidden="true">03</span><p class="objetivo__texto"><span class="ph">[OBJETIVO — texto oficial a ser confirmado]</span></p></li>
+          <li class="objetivo"><span class="objetivo__numero" aria-hidden="true">04</span><p class="objetivo__texto"><span class="ph">[OBJETIVO — texto oficial a ser confirmado]</span></p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 05. ATUAÇÃO — frentes do núcleo (nomes e descrições ainda não confirmados) -->
+    <section class="secao atuacao" id="atuacao" aria-labelledby="t-atuacao">
+      <div class="container">
+        <h2 class="titulo-secao" id="t-atuacao">Como o NEABI atua</h2>
+        <ul class="frentes">
+          <li class="frente"><h3 class="frente__titulo"><span class="ph">[FRENTE DE ATUAÇÃO]</span></h3><p><span class="ph">[DESCRIÇÃO DA FRENTE]</span></p></li>
+          <li class="frente"><h3 class="frente__titulo"><span class="ph">[FRENTE DE ATUAÇÃO]</span></h3><p><span class="ph">[DESCRIÇÃO DA FRENTE]</span></p></li>
+          <li class="frente"><h3 class="frente__titulo"><span class="ph">[FRENTE DE ATUAÇÃO]</span></h3><p><span class="ph">[DESCRIÇÃO DA FRENTE]</span></p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06. CHAMADA FINAL — leva às Ações ou ao próximo Grupo de Estudos -->
+    <section class="secao chamada" id="proximo-passo" aria-labelledby="t-chamada">
+      <div class="container" data-revela>
+        <h2 id="t-chamada">Participe das nossas ações</h2>
+        <p class="chamada__texto"><span class="ph">[FRASE CURTA DE CONVITE]</span></p>
+        <div class="botoes">
+          <a class="botao botao--ocre botao--seta" href="prototipo-acoes.html">Ver ações e agenda</a>
+          <a class="botao botao--contorno" href="prototipo-acoes.html?categoria=grupo-de-estudos">Próximo Grupo de Estudos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: idêntico ao da home -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="js/prototipo-visual.js"></script>
+</body>
+</html>

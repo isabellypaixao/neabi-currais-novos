@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Precisa de apoio? — Protótipo visual — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · página Apoio · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: idêntico em todas as páginas do protótipo; a página atual leva aria-current -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html">Sobre</a></li>
+          <li><a href="prototipo-acoes.html">Ações</a></li>
+          <li><a href="prototipo-materiais.html">Materiais</a></li>
+          <li><a href="prototipo-contato.html">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html" aria-current="page">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ABERTURA calma: título menor, só um detalhe fino de estampa, aviso logo no início -->
+    <section class="abertura abertura--calma" aria-labelledby="ap-titulo">
+      <div class="estampa estampa--detalhe" role="img" aria-label="Espaço reservado para a estampa oficial do NEABI"><span class="estampa__legenda">[ESTAMPA OFICIAL DO NEABI]</span></div>
+      <div class="container abertura__conteudo">
+        <p class="abertura__trilha"><a href="prototipo-visual.html">Início</a> / Apoio</p>
+        <h1 class="abertura__titulo" id="ap-titulo"><span class="abertura__nome">Precisa de apoio?</span></h1>
+        <div class="abertura__resto">
+          <p class="abertura__intro">Sofreu ou presenciou uma situação de racismo no campus? Nesta página você encontra informações para buscar orientação e os canais oficiais de contato do NEABI.</p>
+          <p class="aviso-site">Este site não recebe denúncias nem armazena relatos pessoais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao ap-secao ap-secao--branca" aria-labelledby="ap-t-orientacao">
+      <div class="container ap-duas">
+        <h2 class="titulo-secao" id="ap-t-orientacao">Como buscar orientação</h2>
+        <p><span class="ph">[PROCEDIMENTO A SER DEFINIDO PELA COORDENAÇÃO]</span></p>
+      </div>
+    </section>
+
+    <section class="secao ap-secao" aria-labelledby="ap-t-canais">
+      <div class="container ap-duas">
+        <h2 class="titulo-secao" id="ap-t-canais">Canais oficiais</h2>
+        <dl class="dados">
+          <div class="dados__linha"><dt>E-mail do NEABI</dt><dd><span class="ph">[E-MAIL OFICIAL]</span></dd></div>
+          <div class="dados__linha"><dt>Local de atendimento</dt><dd><span class="ph">[LOCAL DE ATENDIMENTO]</span></dd></div>
+          <div class="dados__linha"><dt>Outros meios institucionais</dt><dd><span class="ph">[OUTROS MEIOS, se existirem]</span></dd></div>
+        </dl>
+      </div>
+      <div class="container">
+        <p class="ap-fim">Para outros assuntos, veja a página de <a href="prototipo-contato.html">Contato</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ: idêntico em todas as páginas -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="js/prototipo-visual.js"></script>
+</body>
+</html>

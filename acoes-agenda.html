@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Ações e agenda — NEABI · Currais Novos</title>
+<meta content="NEABI — Núcleo de Estudos Afro-Brasileiros e Indígenas do IFRN, Campus Currais Novos." name="description"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/acoes-agenda.css" rel="stylesheet"/>
+<link href="css/movimento.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<!-- ===== Cabeçalho e navegação (igual em todas as páginas) ===== -->
+<header class="cabecalho">
+<div class="container cabecalho__linha">
+<a class="marca" href="index.html">
+<img alt="" aria-hidden="true" class="marca__logo" height="40" src="img/logo-neabi-simbolo.png" width="40"/>
+<span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+</a>
+<nav aria-label="Menu principal" class="menu" id="menu-principal">
+<ul>
+<li class="so-celular"><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a aria-current="page" href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="conteudo">
+<!-- Abertura: título à esquerda, introdução e atalhos à direita, faixa de estampa na base -->
+<section aria-labelledby="ac-titulo" class="acoes-abertura">
+<div class="container acoes-abertura__grade">
+<h1 class="acoes-titulo" id="ac-titulo">Ações e agenda</h1>
+<div class="acoes-abertura__resto">
+<p class="acoes-abertura__intro" data-texto="introducaoAcoes"></p>
+<p class="acoes-atalhos"><a class="link-texto" href="#proximo">Próximo Grupo de Estudos</a><a class="link-texto" href="#calendario">Calendário</a><a class="link-texto" href="#outras">Agenda pública</a><a class="link-texto" href="#realizadas">Ações realizadas</a></p>
+</div>
+</div>
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+</section>
+<!-- Próximo Grupo de Estudos: destaque curto.
+         Dados de dados/grupo-estudos.js, preenchidos por js/proximo-grupo-estudos.js. -->
+<section aria-labelledby="ac-proximo" class="secao proximo" id="proximo">
+<div class="container">
+<div class="grupo">
+<div>
+<h2 class="grupo__rotulo" id="ac-proximo">
+                Próximo Grupo de Estudos
+              </h2>
+<p class="grupo__data">
+<span class="grupo__dia" data-proximo-grupo="dia"><span class="ph">[DD]</span></span><span class="grupo__mes" data-proximo-grupo="mes"><span class="ph">[MÊS]</span></span>
+</p>
+</div>
+<div>
+<h3 class="grupo__titulo" data-proximo-grupo="titulo">
+<span class="ph">[TEMA A SER DEFINIDO]</span>
+</h3>
+<p class="grupo__detalhe" data-proximo-grupo="detalhe">
+<span class="ph">[HORÁRIO · LOCAL]</span>
+</p>
+<p class="grupo__linha" data-oculta-sem-valor="">
+<span class="grupo__linha-rotulo">Texto: </span><span data-proximo-grupo="texto"><span class="ph">[TEXTO A SER DEFINIDO]</span></span>
+</p>
+<p class="grupo__linha" data-oculta-sem-valor="">
+<span class="grupo__linha-rotulo">Autor(a): </span><span data-proximo-grupo="autor"><span class="ph">[AUTOR(A)]</span></span>
+</p>
+<a class="link-texto" href="#calendario">Ver o calendário do Grupo de Estudos</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Calendário do Grupo de Estudos: parte específica do Grupo (não substitui a agenda pública).
+         Calendário, painel e listas são montados por js/calendario-grupo-estudos.js a partir de dados/grupo-estudos.js. -->
+<section aria-labelledby="cal-titulo" class="secao calendario" id="calendario">
+<div class="container">
+<h2 class="titulo-secao" id="cal-titulo">
+            Calendário do Grupo de Estudos
+          </h2>
+<p class="calendario__intro">
+            Consulte aqui os próximos encontros, os anteriores e os textos
+            estudados em cada data. Escolha um dia marcado para ver os detalhes.
+          </p>
+<noscript><p>
+              Para ver o calendário, ative o JavaScript do navegador.
+            </p></noscript>
+<div class="calendario__grade" id="calendario-grupo">
+<div>
+<div class="calendario__topo">
+<h3 aria-live="polite" class="calendario__mes" id="calendario-mes"></h3>
+<div class="calendario__navegacao">
+<button aria-label="Mês anterior" class="calendario__botao" id="calendario-anterior" type="button">
+                    ‹
+                  </button>
+<button aria-label="Próximo mês" class="calendario__botao" id="calendario-seguinte" type="button">
+                    ›
+                  </button>
+</div>
+</div>
+<table aria-labelledby="calendario-mes" class="calendario__tabela">
+<thead>
+<tr>
+<th scope="col">
+<span aria-hidden="true">dom</span><span class="so-leitor">domingo</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">seg</span><span class="so-leitor">segunda-feira</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">ter</span><span class="so-leitor">terça-feira</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">qua</span><span class="so-leitor">quarta-feira</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">qui</span><span class="so-leitor">quinta-feira</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">sex</span><span class="so-leitor">sexta-feira</span>
+</th>
+<th scope="col">
+<span aria-hidden="true">sáb</span><span class="so-leitor">sábado</span>
+</th>
+</tr>
+</thead>
+<tbody id="calendario-corpo"></tbody>
+</table>
+<ul aria-label="Legenda" class="calendario__legenda">
+<li>
+<span aria-hidden="true" class="legenda__marca legenda__marca--proximo"></span>Próximo encontro
+                </li>
+<li>
+<span aria-hidden="true" class="legenda__marca legenda__marca--realizado"></span>Realizado
+                </li>
+</ul>
+</div>
+<div aria-label="Detalhes do encontro" aria-live="polite" class="calendario__painel" id="calendario-detalhes"></div>
+</div>
+<!-- Listas simples: no celular evitam depender do calendário mensal -->
+<div class="calendario__listas">
+<div>
+<h3 class="calendario__subtitulo">Próximos encontros</h3>
+<ul class="lista-encontros" id="calendario-proximos"></ul>
+</div>
+<div>
+<h3 class="calendario__subtitulo">Encontros anteriores</h3>
+<ul class="lista-encontros" id="calendario-anteriores"></ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Outras atividades públicas: eventos, projetos e campanhas (dados/agenda.js, js/agenda-publica.js).
+         O Grupo de Estudos fica no calendário acima. Não existe categoria "Reunião". -->
+<section aria-labelledby="ac-outras" class="secao outras" id="outras">
+<div class="container">
+<h2 class="titulo-secao" id="ac-outras">
+            Outras atividades públicas
+          </h2>
+<p class="outras__intro">
+            Eventos, projetos e campanhas públicos do NEABI.
+          </p>
+<div class="agenda__cabeca">
+<div aria-label="Filtrar atividades por categoria" class="filtros" role="group">
+<button aria-pressed="true" class="filtro" data-filtro-agenda="todas" type="button">
+                Todas
+              </button>
+<button aria-pressed="false" class="filtro" data-filtro-agenda="evento" type="button">
+                Eventos
+              </button>
+<button aria-pressed="false" class="filtro" data-filtro-agenda="projeto" type="button">
+                Projetos
+              </button>
+<button aria-pressed="false" class="filtro" data-filtro-agenda="campanha" type="button">
+                Campanhas
+              </button>
+</div>
+</div>
+<ul class="agenda__lista" id="agenda-lista"></ul>
+<p class="agenda__vazio" hidden="" id="agenda-vazio" role="status"></p>
+</div>
+</section>
+<!-- Ações realizadas: registro do que o NEABI já fez (dados/acoes-realizadas.js, js/acoes-realizadas.js) -->
+<section aria-labelledby="ac-realizadas" class="secao realizadas" id="realizadas">
+<div class="container" data-revela="">
+<h2 class="titulo-secao" id="ac-realizadas">Ações realizadas</h2>
+<p class="realizadas__intro" data-texto="introducaoAcoesRealizadas"></p>
+<div id="acoes-realizadas-lista"></div>
+</div>
+</section>
+<!-- Acervo em imagens: registros recebidos da coordenação, sem atribuição de data quando não identificada -->
+<section aria-labelledby="acervo-titulo" class="secao acervo-imagens" id="acervo">
+<div class="container">
+<div class="secao-cabeca">
+<h2 class="titulo-secao" id="acervo-titulo">Acervo em imagens</h2>
+<p class="secao-cabeca__intro">Alguns registros fotográficos de atividades do NEABI. Quando a imagem não veio acompanhada de identificação de data ou evento, a legenda permanece geral para preservar a precisão do acervo.</p>
+</div>
+<div class="galeria" id="acervo-galeria"></div>
+</div>
+</section>
+<!-- Encerramento: só texto e dois links -->
+<section aria-labelledby="ac-encerramento" class="secao encerramento">
+<div class="container">
+<h2 id="ac-encerramento">Continue conhecendo o NEABI</h2>
+<p class="encerramento__links">
+<a class="link-texto" href="materiais.html">Materiais</a>
+<a class="link-texto" href="sobre.html">Sobre o NEABI</a>
+</p>
+</div>
+</section>
+</main>
+<!-- ===== Rodapé (igual em todas as páginas) ===== -->
+<footer class="rodape">
+<div aria-hidden="true" class="estampa estampa--detalhe"></div>
+<div class="container">
+<div class="rodape__marca">
+<img alt="" aria-hidden="true" class="rodape__logo" height="72" src="img/logo-neabi-simbolo.png" width="72"/>
+<p class="rodape__sigla">NEABI</p>
+</div>
+<p>
+          Núcleo de Estudos Afro-Brasileiros e Indígenas<br/>IFRN · Campus
+          Currais Novos
+        </p>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="acoes-agenda.html">Ações</a></li>
+<li><a href="materiais.html">Materiais</a></li>
+<li><a href="contato.html">Contato</a></li>
+</ul>
+<!-- Créditos e aviso de autoria do site: dados/instituicao.js (creditosBolsistas). -->
+<p data-texto="creditosBolsistas"></p>
+</div>
+</footer>
+<!-- ===== Scripts: utilitários e dados primeiro; menu e movimento por último ===== -->
+<script src="js/utilitarios.js"></script>
+<script src="dados/instituicao.js"></script>
+<script src="dados/grupo-estudos.js"></script>
+<script src="dados/agenda.js"></script>
+<script src="dados/acoes-realizadas.js"></script>
+<script src="dados/galerias.js"></script>
+<script src="js/instituicao.js"></script>
+<script src="js/proximo-grupo-estudos.js"></script>
+<script src="js/calendario-grupo-estudos.js"></script>
+<script src="js/agenda-publica.js"></script>
+<script src="js/acoes-realizadas.js"></script>
+<script src="js/galerias.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/movimento.js"></script>
+</body>
+</html>

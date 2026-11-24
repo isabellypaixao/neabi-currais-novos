@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Protótipo visual (navegação) — NEABI · Currais Novos</title>
+  <link rel="stylesheet" href="css/prototipo-visual.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="barra-nota">Protótipo visual · conteúdo provisório · <a href="../../index.html">ver versão atual</a> · <button class="barra-nota__botao" id="pv-limpo" type="button" aria-pressed="false">Ocultar destaque dos placeholders</button></p>
+
+  <!-- CABEÇALHO: sticky e fino. Desktop = menu horizontal; celular = marca + ☰ -->
+  <header class="cabecalho">
+    <div class="container cabecalho__linha">
+      <a class="marca" href="prototipo-visual.html">
+        <!-- [ADICIONAR SÍMBOLO DO IFRN]: trocar este <span> por <img src="../../img/simbolo-ifrn.png" alt="" width="32" height="32"> (usar arquivo oficial do IFRN) -->
+        <span class="simbolo-ifrn" aria-hidden="true" title="[ADICIONAR SÍMBOLO DO IFRN]"></span>
+        <span class="marca__texto">NEABI <span>· Currais Novos</span></span>
+      </a>
+      <button class="menu-botao" id="pv-botao-menu" type="button" aria-expanded="false" aria-controls="pv-menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="pv-menu" aria-label="Menu principal">
+        <ul>
+          <li class="so-celular"><a href="prototipo-visual.html">Início</a></li>
+          <li><a href="prototipo-sobre.html">Sobre</a></li>
+          <li><a href="prototipo-acoes.html">Ações</a></li>
+          <li><a href="prototipo-materiais.html">Materiais</a></li>
+          <li><a href="prototipo-contato.html">Contato</a></li>
+        </ul>
+        <a class="botao botao--ocre menu__apoio" href="prototipo-apoio.html">Precisa de apoio?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 1. ABERTURA: a estampa é uma faixa que a sigla atravessa -->
+    <section class="hero" aria-labelledby="t-hero">
+      <div class="estampa hero__estampa" role="img" aria-label="Espaço reservado para a estampa oficial do NEABI"><span class="estampa__legenda">[ESTAMPA OFICIAL DO NEABI]</span></div>
+      <div class="container hero__conteudo">
+        <h1 class="hero__sigla" id="t-hero">NEABI</h1>
+        <div class="hero__corpo">
+          <p class="hero__local">IFRN · Campus Currais Novos</p>
+          <p class="hero__nome">Núcleo de Estudos Afro-Brasileiros e Indígenas</p>
+          <p class="hero__texto"><span class="ph">[APRESENTAÇÃO CURTA APROVADA PELO NEABI]</span></p>
+          <div class="botoes">
+            <a class="botao botao--ocre botao--seta" href="prototipo-sobre.html">Conheça o NEABI</a>
+            <a class="botao botao--contorno" href="prototipo-apoio.html">Precisa de apoio?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. O QUE ESTÁ ACONTECENDO (curto; só atividades públicas) -->
+    <section class="agora" aria-labelledby="t-agora">
+      <div class="container">
+        <h2 class="rotulo" id="t-agora">O que está acontecendo</h2>
+        <div class="agora__grade">
+          <article class="agora__item">
+            <p class="agora__tipo">Próximo Grupo de Estudos</p>
+            <p class="agora__data" data-proximo-grupo="data"><span class="ph">[DD/MM]</span></p>
+            <p class="agora__titulo" data-proximo-grupo="titulo"><span class="ph">[TÍTULO DO ENCONTRO]</span></p>
+            <p class="agora__detalhe" data-proximo-grupo="detalhe"><span class="ph">[HORÁRIO · LOCAL]</span></p>
+            <!-- Sem encontro programado, o texto futuro será: "Nenhum encontro aberto programado por enquanto." -->
+          </article>
+          <article class="agora__item">
+            <p class="agora__tipo">Aviso recente</p>
+            <p class="agora__titulo"><span class="ph">[TÍTULO DO AVISO]</span></p>
+            <p class="agora__detalhe"><span class="ph">[TEXTO CURTO DO AVISO]</span></p>
+          </article>
+        </div>
+        <a class="link-texto" href="prototipo-acoes.html#calendario">Ver o calendário do Grupo de Estudos</a>
+      </div>
+    </section>
+
+    <!-- 3. SOBRE (prévia) -->
+    <section class="secao secao--compacta apresentacao" aria-labelledby="t-sobre">
+      <div class="container apresentacao__grade" data-revela>
+        <h2 class="rotulo" id="t-sobre">Sobre o NEABI</h2>
+        <div>
+          <p class="declaracao"><span class="ph">[FRASE CURTA DE APRESENTAÇÃO APROVADA PELO NEABI]</span></p>
+          <a class="link-texto" href="prototipo-sobre.html">Conheça o NEABI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. NOSSA HISTÓRIA (prévia: 1 marco + 1 foto; a linha do tempo completa fica em Sobre) -->
+    <section class="secao secao--compacta historia" aria-labelledby="t-historia">
+      <div class="container">
+        <h2 class="rotulo" id="t-historia">Nossa história</h2>
+        <div class="historia__previa">
+        <ol class="marcos">
+          <li class="marco">
+            <p class="marco__ano"><span class="ph">[ANO]</span></p>
+            <h3 class="marco__titulo"><span class="ph">[MARCO DA HISTÓRIA DO NEABI]</span></h3>
+            <p class="marco__texto"><span class="ph">[TEXTO A SER EXTRAÍDO DO PORTFÓLIO]</span></p>
+          </li>
+        </ol>
+        <figure class="historia__foto">
+          <div class="foto">[FOTO DO ACERVO]</div>
+          <figcaption>[LEGENDA E CRÉDITO]</figcaption>
+        </figure>
+        </div>
+        <a class="link-texto" href="prototipo-sobre.html#nossa-historia">Conheça nossa história</a>
+      </div>
+    </section>
+
+    <!-- Transição: faixa reservada para a estampa -->
+    <div class="estampa estampa--faixa" role="img" aria-label="Faixa reservada para a estampa oficial"><span class="estampa__legenda">[ESTAMPA — faixa de transição]</span></div>
+
+    <!-- 5. O QUE O NEABI FAZ (lista editorial, sem cards) -->
+    <section class="secao secao--compacta" aria-labelledby="t-acoes">
+      <div class="container">
+        <h2 class="rotulo" id="t-acoes">O que o NEABI faz</h2>
+        <ul class="areas">
+          <li><a href="prototipo-acoes.html#calendario"><span class="areas__nome">Grupo de Estudos</span><span class="areas__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></span></a></li>
+          <li><a href="prototipo-acoes.html?categoria=evento"><span class="areas__nome">Eventos</span><span class="areas__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></span></a></li>
+          <li><a href="prototipo-acoes.html?categoria=projeto"><span class="areas__nome">Projetos</span><span class="areas__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></span></a></li>
+          <li><a href="prototipo-acoes.html?categoria=campanha"><span class="areas__nome">Campanhas</span><span class="areas__descricao"><span class="ph">[DESCRIÇÃO CURTA]</span></span></a></li>
+        </ul>
+        <a class="link-texto" href="prototipo-acoes.html">Ver nossas ações</a>
+      </div>
+    </section>
+
+    <!-- 6. MATERIAIS E CONHEÇA (prévia: 1 indicação + 1 personalidade; o catálogo completo fica em Materiais) -->
+    <section class="secao secao--compacta materiais" aria-labelledby="t-materiais">
+      <div class="container">
+        <h2 class="rotulo" id="t-materiais">Materiais e Conheça</h2>
+        <div class="destaques-home">
+          <figure class="destaque-home">
+            <div class="foto foto--retrato">[CAPA]</div>
+            <figcaption><span class="destaque-home__rotulo">Indicação do mês</span><strong><span class="ph">[TÍTULO]</span></strong><span class="ph">[AUTORIA OU DIREÇÃO]</span></figcaption>
+          </figure>
+          <figure class="destaque-home">
+            <div class="foto foto--retrato">[FOTO]</div>
+            <figcaption><span class="destaque-home__rotulo">Conheça</span><strong><span class="ph">[NOME]</span></strong><span class="ph">[ÁREA DE ATUAÇÃO]</span></figcaption>
+          </figure>
+        </div>
+        <a class="link-texto" href="prototipo-materiais.html">Explorar materiais</a>
+      </div>
+    </section>
+
+    <!-- 7. APOIO (destaque em ocre; sem formulário nem relatos) -->
+    <section class="secao secao--compacta apoio" aria-labelledby="t-apoio">
+      <div class="container" data-revela>
+        <h2 id="t-apoio">Precisa de orientação ou apoio?</h2>
+        <p><span class="ph">[TEXTO DE APOIO — aprovação da coordenação]</span></p>
+        <a class="botao botao--preto botao--seta" href="prototipo-apoio.html">Ver canais de apoio</a>
+        <p class="apoio__aviso">Este site não recebe denúncias nem armazena relatos pessoais.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. RODAPÉ -->
+  <footer class="rodape">
+    <div class="estampa estampa--detalhe" role="img" aria-label="Detalhe reservado para a estampa oficial"><span class="estampa__legenda">[DETALHE DA ESTAMPA]</span></div>
+    <div class="container">
+      <p class="rodape__sigla">NEABI</p>
+      <p>Núcleo de Estudos Afro-Brasileiros e Indígenas<br>IFRN · Campus Currais Novos</p>
+      <ul>
+        <li><a href="prototipo-visual.html">Início</a></li><li><a href="prototipo-sobre.html">Sobre</a></li><li><a href="prototipo-acoes.html">Ações</a></li>
+        <li><a href="prototipo-materiais.html">Materiais</a></li><li><a href="prototipo-apoio.html">Apoio</a></li><li><a href="prototipo-contato.html">Contato</a></li>
+      </ul>
+      <p><span class="ph">[CRÉDITOS DAS BOLSISTAS — confirmar com a coordenação]</span></p>
+    </div>
+  </footer>
+
+  <script src="../../js/utilitarios.js"></script>
+  <script src="../../dados/grupo-estudos.js"></script>
+  <script src="js/prototipo-visual.js"></script>
+  <script src="../../js/proximo-grupo-estudos.js"></script>
+</body>
+</html>
